@@ -37,9 +37,9 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=DESKTOP-UKPJFI3\\SQLEXPRESS04;Initial Catalog=IT13;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection conn = new("Data Source=PC\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;TrustServerCertificate=True;");
                 conn.Open();
-                string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_passowrd=@password";
+                string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
                 cmd.Parameters.AddWithValue("@username", usernameTb.Text);
                 cmd.Parameters.AddWithValue("@password", HashPassword(passwordTb.Text)); // Hash the input password
@@ -172,5 +172,16 @@ namespace Fitness_Gym
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernamebtn_Click(object sender, EventArgs e)
+        {
+            UserLogin(); // call your login method
+        }
+
     }
 }

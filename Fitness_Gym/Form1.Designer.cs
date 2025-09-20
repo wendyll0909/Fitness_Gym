@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             loginPanel = new Panel();
             ShowPasswordBtn = new Button();
             createNewAccBtn = new Button();
@@ -39,13 +40,10 @@
             label2 = new Label();
             label3 = new Label();
             panel7 = new Panel();
-            logout = new MenuStrip();
-            profileToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
+            pictureBox1 = new PictureBox();
             loginPanel.SuspendLayout();
             panel7.SuspendLayout();
-            logout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // loginPanel
@@ -154,6 +152,7 @@
             usernamebtn.TabIndex = 0;
             usernamebtn.Text = "Login";
             usernamebtn.UseVisualStyleBackColor = false;
+            usernamebtn.Click += usernamebtn_Click;
             // 
             // label2
             // 
@@ -161,7 +160,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(86, 387);
+            label2.Location = new Point(119, 366);
             label2.Name = "label2";
             label2.Size = new Size(372, 81);
             label2.TabIndex = 6;
@@ -174,7 +173,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 18.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(86, 500);
+            label3.Location = new Point(15, 548);
             label3.Name = "label3";
             label3.Size = new Size(704, 90);
             label3.TabIndex = 7;
@@ -193,39 +192,16 @@
             panel7.TabIndex = 8;
             panel7.Paint += panel7_Paint;
             // 
-            // logout
+            // pictureBox1
             // 
-            logout.Dock = DockStyle.None;
-            logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logout.ImageScalingSize = new Size(20, 20);
-            logout.Items.AddRange(new ToolStripItem[] { profileToolStripMenuItem, logoutToolStripMenuItem });
-            logout.Location = new Point(127, 132);
-            logout.Name = "logout";
-            logout.Padding = new Padding(7, 3, 0, 3);
-            logout.RenderMode = ToolStripRenderMode.Professional;
-            logout.Size = new Size(265, 38);
-            logout.TabIndex = 9;
-            logout.Text = "menuStrip1";
-            // 
-            // profileToolStripMenuItem
-            // 
-            profileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
-            profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            profileToolStripMenuItem.Size = new Size(14, 32);
-            profileToolStripMenuItem.Click += profileToolStripMenuItem_Click_1;
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(224, 32);
-            toolStripMenuItem1.Text = "Profile";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(92, 32);
-            logoutToolStripMenuItem.Text = "Logout";
-            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(137, 39);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(354, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // LoginForm
             // 
@@ -234,11 +210,10 @@
             BackColor = Color.Goldenrod;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1448, 939);
+            Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(panel7);
-            Controls.Add(logout);
-            MainMenuStrip = logout;
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -247,8 +222,7 @@
             loginPanel.ResumeLayout(false);
             loginPanel.PerformLayout();
             panel7.ResumeLayout(false);
-            logout.ResumeLayout(false);
-            logout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -266,9 +240,6 @@
         private Label label3;
         private Button ShowPasswordBtn;
         private Panel panel7;
-        private MenuStrip logout;
-        private ToolStripMenuItem profileToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem logoutToolStripMenuItem;
+        private PictureBox pictureBox1;
     }
 }
