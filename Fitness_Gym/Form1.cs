@@ -21,10 +21,6 @@ namespace Fitness_Gym
             usernameTb.Focus();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
-        {
-            UserLogin();
-        }
 
         private void UserLogin()
         {
@@ -37,7 +33,7 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=PC\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;TrustServerCertificate=True;");
+                using SqlConnection conn = new("Data Source=U8797V103\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
@@ -56,8 +52,8 @@ namespace Fitness_Gym
                         usernameTb.Clear();
                         passwordTb.Clear();
                         // Navigate to Dashboard
-                        Dashboard dashboard = new();
-                        dashboard.Show();
+                        MainForm mainform = new MainForm();
+                        mainform.Show();
                         this.Hide();
                     }
                     else
@@ -91,18 +87,7 @@ namespace Fitness_Gym
             return builder.ToString();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to logout?", "Logout",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                usernameTb.Clear();
-                passwordTb.Clear();
-                usernameTb.Focus();
-                MessageBox.Show("Logged out successfully.", "Logout",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+    
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -155,24 +140,6 @@ namespace Fitness_Gym
             // Implement navigation to a Create Account form if exists
             // Example: new CreateAccountForm().Show(); this.Hide();
         }
-
-        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Profile section (to be implemented).",
-                "Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("View or edit your profile (to be implemented).",
-                "Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void profileToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
