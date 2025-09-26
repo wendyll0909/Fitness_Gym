@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fitness_Gym.Forms
+namespace Fitness_Gym
 {
-    public partial class Payments : Form
+    public partial class Billing : Form
     {
-        public Payments()
+        public Billing()
         {
             InitializeComponent();
         }

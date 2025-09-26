@@ -82,17 +82,17 @@ namespace Fitness_Gym
 
         private void sidebar_button_refferal_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.Refferal());
         }
 
         private void sidebar_button_feedback_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.Feedback());
         }
 
         private void sidebar_button_reports_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.Reports());
         }
 
         private void sidebar_button_logout_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace Fitness_Gym
 
         private void sidebar_button_plan_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.Membership());
         }
     }
 }

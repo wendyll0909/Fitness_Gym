@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Fitness_Gym.Forms
 {
-    public partial class Payments : Form
+    public partial class Reports : Form
     {
-        public Payments()
+        public Reports()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

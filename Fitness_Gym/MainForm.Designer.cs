@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            sidebar_button_plan = new Button();
             sidebar_button_logout = new Button();
             sidebar_button_reports = new Button();
             sidebar_button_feedback = new Button();
@@ -37,7 +38,6 @@
             sidebar_button_members = new Button();
             sidebar_button_dashboard = new Button();
             panel_child = new Panel();
-            sidebar_button_plan = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,18 +54,33 @@
             panel1.Controls.Add(sidebar_button_dashboard);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(207, 681);
+            panel1.Size = new Size(237, 908);
             panel1.TabIndex = 0;
+            // 
+            // sidebar_button_plan
+            // 
+            sidebar_button_plan.FlatStyle = FlatStyle.Flat;
+            sidebar_button_plan.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            sidebar_button_plan.ForeColor = SystemColors.Control;
+            sidebar_button_plan.Location = new Point(27, 452);
+            sidebar_button_plan.Margin = new Padding(3, 20, 3, 4);
+            sidebar_button_plan.Name = "sidebar_button_plan";
+            sidebar_button_plan.Size = new Size(178, 48);
+            sidebar_button_plan.TabIndex = 10;
+            sidebar_button_plan.Text = "Management Membership Plan";
+            sidebar_button_plan.Click += sidebar_button_plan_Click;
             // 
             // sidebar_button_logout
             // 
             sidebar_button_logout.FlatStyle = FlatStyle.Flat;
             sidebar_button_logout.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_logout.ForeColor = SystemColors.Control;
-            sidebar_button_logout.Location = new Point(28, 606);
+            sidebar_button_logout.Location = new Point(32, 808);
+            sidebar_button_logout.Margin = new Padding(3, 4, 3, 4);
             sidebar_button_logout.Name = "sidebar_button_logout";
-            sidebar_button_logout.Size = new Size(156, 36);
+            sidebar_button_logout.Size = new Size(178, 48);
             sidebar_button_logout.TabIndex = 9;
             sidebar_button_logout.Text = "Log Out";
             sidebar_button_logout.Click += sidebar_button_logout_Click;
@@ -75,10 +90,10 @@
             sidebar_button_reports.FlatStyle = FlatStyle.Flat;
             sidebar_button_reports.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_reports.ForeColor = SystemColors.Control;
-            sidebar_button_reports.Location = new Point(24, 285);
-            sidebar_button_reports.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_reports.Location = new Point(27, 380);
+            sidebar_button_reports.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_reports.Name = "sidebar_button_reports";
-            sidebar_button_reports.Size = new Size(156, 36);
+            sidebar_button_reports.Size = new Size(178, 48);
             sidebar_button_reports.TabIndex = 7;
             sidebar_button_reports.Text = "Reports";
             sidebar_button_reports.Click += sidebar_button_reports_Click;
@@ -88,10 +103,10 @@
             sidebar_button_feedback.FlatStyle = FlatStyle.Flat;
             sidebar_button_feedback.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_feedback.ForeColor = SystemColors.Control;
-            sidebar_button_feedback.Location = new Point(24, 231);
-            sidebar_button_feedback.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_feedback.Location = new Point(27, 308);
+            sidebar_button_feedback.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_feedback.Name = "sidebar_button_feedback";
-            sidebar_button_feedback.Size = new Size(156, 36);
+            sidebar_button_feedback.Size = new Size(178, 48);
             sidebar_button_feedback.TabIndex = 6;
             sidebar_button_feedback.Text = "Feedback Management";
             sidebar_button_feedback.Click += sidebar_button_feedback_Click;
@@ -101,10 +116,10 @@
             sidebar_button_refferal.FlatStyle = FlatStyle.Flat;
             sidebar_button_refferal.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_refferal.ForeColor = SystemColors.Control;
-            sidebar_button_refferal.Location = new Point(24, 177);
-            sidebar_button_refferal.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_refferal.Location = new Point(27, 236);
+            sidebar_button_refferal.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_refferal.Name = "sidebar_button_refferal";
-            sidebar_button_refferal.Size = new Size(156, 36);
+            sidebar_button_refferal.Size = new Size(178, 48);
             sidebar_button_refferal.TabIndex = 5;
             sidebar_button_refferal.Text = "Referal Program";
             sidebar_button_refferal.Click += sidebar_button_refferal_Click;
@@ -114,10 +129,10 @@
             sidebar_button_payments.FlatStyle = FlatStyle.Flat;
             sidebar_button_payments.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_payments.ForeColor = SystemColors.Control;
-            sidebar_button_payments.Location = new Point(24, 123);
-            sidebar_button_payments.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_payments.Location = new Point(27, 164);
+            sidebar_button_payments.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_payments.Name = "sidebar_button_payments";
-            sidebar_button_payments.Size = new Size(156, 36);
+            sidebar_button_payments.Size = new Size(178, 48);
             sidebar_button_payments.TabIndex = 4;
             sidebar_button_payments.Text = "Billing and Payments";
             sidebar_button_payments.Click += sidebar_button_payments_Click;
@@ -127,10 +142,10 @@
             sidebar_button_members.FlatStyle = FlatStyle.Flat;
             sidebar_button_members.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_members.ForeColor = SystemColors.Control;
-            sidebar_button_members.Location = new Point(24, 69);
-            sidebar_button_members.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_members.Location = new Point(27, 92);
+            sidebar_button_members.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_members.Name = "sidebar_button_members";
-            sidebar_button_members.Size = new Size(156, 36);
+            sidebar_button_members.Size = new Size(178, 48);
             sidebar_button_members.TabIndex = 3;
             sidebar_button_members.Text = "Members Registraion";
             sidebar_button_members.Click += sidebar_button_members_Click;
@@ -140,42 +155,31 @@
             sidebar_button_dashboard.FlatStyle = FlatStyle.Flat;
             sidebar_button_dashboard.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             sidebar_button_dashboard.ForeColor = SystemColors.Control;
-            sidebar_button_dashboard.Location = new Point(24, 15);
-            sidebar_button_dashboard.Margin = new Padding(3, 15, 3, 3);
+            sidebar_button_dashboard.Location = new Point(27, 20);
+            sidebar_button_dashboard.Margin = new Padding(3, 20, 3, 4);
             sidebar_button_dashboard.Name = "sidebar_button_dashboard";
-            sidebar_button_dashboard.Size = new Size(156, 36);
+            sidebar_button_dashboard.Size = new Size(178, 48);
             sidebar_button_dashboard.TabIndex = 2;
             sidebar_button_dashboard.Text = "Dashboard";
             sidebar_button_dashboard.Click += sidebar_button_dashboard_Click;
             // 
             // panel_child
             // 
-            panel_child.Location = new Point(206, 0);
+            panel_child.Location = new Point(235, 0);
+            panel_child.Margin = new Padding(3, 4, 3, 4);
             panel_child.Name = "panel_child";
-            panel_child.Size = new Size(1078, 681);
+            panel_child.Size = new Size(1232, 908);
             panel_child.TabIndex = 1;
-            // 
-            // sidebar_button_plan
-            // 
-            sidebar_button_plan.FlatStyle = FlatStyle.Flat;
-            sidebar_button_plan.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            sidebar_button_plan.ForeColor = SystemColors.Control;
-            sidebar_button_plan.Location = new Point(24, 339);
-            sidebar_button_plan.Margin = new Padding(3, 15, 3, 3);
-            sidebar_button_plan.Name = "sidebar_button_plan";
-            sidebar_button_plan.Size = new Size(156, 36);
-            sidebar_button_plan.TabIndex = 10;
-            sidebar_button_plan.Text = "Reports";
-            sidebar_button_plan.Click += sidebar_button_plan_Click;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(1285, 681);
+            ClientSize = new Size(1469, 908);
             Controls.Add(panel_child);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;

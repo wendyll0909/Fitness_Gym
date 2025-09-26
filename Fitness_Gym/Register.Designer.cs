@@ -1,14 +1,14 @@
 ﻿namespace Fitness_Gym
 {
-    partial class LoginForm
+    partial class Register
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,56 +23,81 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            panel7 = new Panel();
             loginPanel = new Panel();
             ShowPasswordBtn = new Button();
+            createNewAccBtn = new Button();
             panel2 = new Panel();
-            ForgetAccLbl = new Label();
             usernameTb = new TextBox();
             passwordTb = new TextBox();
-            usernamebtn = new Button();
+            pictureBox1 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
-            panel7 = new Panel();
-            pictureBox1 = new PictureBox();
-            loginPanel.SuspendLayout();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             panel7.SuspendLayout();
+            loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Black;
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(loginPanel);
+            panel7.Location = new Point(725, -1);
+            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(723, 937);
+            panel7.TabIndex = 9;
             // 
             // loginPanel
             // 
             loginPanel.BackColor = Color.Goldenrod;
             loginPanel.BorderStyle = BorderStyle.FixedSingle;
+            loginPanel.Controls.Add(textBox1);
+            loginPanel.Controls.Add(textBox2);
             loginPanel.Controls.Add(ShowPasswordBtn);
+            loginPanel.Controls.Add(createNewAccBtn);
             loginPanel.Controls.Add(panel2);
-            loginPanel.Controls.Add(ForgetAccLbl);
             loginPanel.Controls.Add(usernameTb);
             loginPanel.Controls.Add(passwordTb);
-            loginPanel.Controls.Add(usernamebtn);
-            loginPanel.Location = new Point(135, 232);
+            loginPanel.Location = new Point(135, 135);
             loginPanel.Margin = new Padding(3, 4, 3, 4);
             loginPanel.Name = "loginPanel";
-            loginPanel.Size = new Size(482, 487);
+            loginPanel.Size = new Size(482, 584);
             loginPanel.TabIndex = 0;
-            loginPanel.Paint += loginPanel_Paint;
             // 
             // ShowPasswordBtn
             // 
             ShowPasswordBtn.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ShowPasswordBtn.Location = new Point(376, 112);
+            ShowPasswordBtn.Location = new Point(383, 208);
             ShowPasswordBtn.Margin = new Padding(3, 4, 3, 4);
             ShowPasswordBtn.Name = "ShowPasswordBtn";
-            ShowPasswordBtn.Size = new Size(86, 68);
+            ShowPasswordBtn.Size = new Size(78, 45);
             ShowPasswordBtn.TabIndex = 6;
             ShowPasswordBtn.Text = "👁️";
             ShowPasswordBtn.UseVisualStyleBackColor = true;
-            ShowPasswordBtn.Click += ShowPasswordBtn_Click;
+            // 
+            // createNewAccBtn
+            // 
+            createNewAccBtn.BackColor = Color.Black;
+            createNewAccBtn.FlatStyle = FlatStyle.Flat;
+            createNewAccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createNewAccBtn.ForeColor = Color.White;
+            createNewAccBtn.Location = new Point(116, 429);
+            createNewAccBtn.Margin = new Padding(3, 4, 3, 4);
+            createNewAccBtn.Name = "createNewAccBtn";
+            createNewAccBtn.Size = new Size(242, 73);
+            createNewAccBtn.TabIndex = 5;
+            createNewAccBtn.Text = "Create";
+            createNewAccBtn.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -83,59 +108,40 @@
             panel2.Size = new Size(446, 1);
             panel2.TabIndex = 4;
             // 
-            // ForgetAccLbl
-            // 
-            ForgetAccLbl.AutoSize = true;
-            ForgetAccLbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ForgetAccLbl.ForeColor = Color.White;
-            ForgetAccLbl.Location = new Point(152, 368);
-            ForgetAccLbl.Name = "ForgetAccLbl";
-            ForgetAccLbl.Size = new Size(165, 28);
-            ForgetAccLbl.TabIndex = 3;
-            ForgetAccLbl.Text = "Forget Account?";
-            ForgetAccLbl.Click += ForgetAccLbl_Click;
-            // 
             // usernameTb
             // 
             usernameTb.BorderStyle = BorderStyle.FixedSingle;
             usernameTb.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernameTb.Location = new Point(19, 20);
+            usernameTb.Location = new Point(19, 52);
             usernameTb.Margin = new Padding(3, 4, 3, 4);
             usernameTb.Multiline = true;
             usernameTb.Name = "usernameTb";
             usernameTb.PlaceholderText = "Username";
-            usernameTb.Size = new Size(442, 67);
+            usernameTb.Size = new Size(442, 45);
             usernameTb.TabIndex = 1;
-            usernameTb.TextChanged += usernameTb_TextChanged;
             // 
             // passwordTb
             // 
             passwordTb.BorderStyle = BorderStyle.FixedSingle;
             passwordTb.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            passwordTb.Location = new Point(19, 112);
+            passwordTb.Location = new Point(19, 291);
             passwordTb.Margin = new Padding(3, 4, 3, 4);
             passwordTb.Multiline = true;
             passwordTb.Name = "passwordTb";
             passwordTb.PasswordChar = '*';
-            passwordTb.PlaceholderText = "Password";
-            passwordTb.Size = new Size(442, 67);
+            passwordTb.PlaceholderText = "Confirm Password";
+            passwordTb.Size = new Size(442, 45);
             passwordTb.TabIndex = 2;
-            passwordTb.TextChanged += passwordTb_TextChanged;
             // 
-            // usernamebtn
+            // pictureBox1
             // 
-            usernamebtn.BackColor = Color.FromArgb(44, 51, 70);
-            usernamebtn.FlatStyle = FlatStyle.Flat;
-            usernamebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernamebtn.ForeColor = Color.White;
-            usernamebtn.Location = new Point(19, 197);
-            usernamebtn.Margin = new Padding(3, 4, 3, 4);
-            usernamebtn.Name = "usernamebtn";
-            usernamebtn.Size = new Size(442, 73);
-            usernamebtn.TabIndex = 0;
-            usernamebtn.Text = "Login";
-            usernamebtn.UseVisualStyleBackColor = false;
-            usernamebtn.Click += usernamebtn_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(137, 39);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(354, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -143,12 +149,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(119, 365);
+            label2.Location = new Point(119, 366);
             label2.Name = "label2";
             label2.Size = new Size(372, 81);
-            label2.TabIndex = 6;
+            label2.TabIndex = 11;
             label2.Text = "Fitness Gym";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -159,52 +164,51 @@
             label3.Location = new Point(15, 548);
             label3.Name = "label3";
             label3.Size = new Size(704, 90);
-            label3.TabIndex = 7;
+            label3.TabIndex = 12;
             label3.Text = "Regular exercise provides significant physical \r\nand mental health advantages. ";
-            label3.Click += label3_Click;
             // 
-            // panel7
+            // textBox2
             // 
-            panel7.BackColor = Color.FromArgb(44, 51, 70);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(loginPanel);
-            panel7.Location = new Point(725, -1);
-            panel7.Margin = new Padding(3, 4, 3, 4);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(723, 937);
-            panel7.TabIndex = 8;
-            panel7.Paint += panel7_Paint;
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(19, 208);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.PlaceholderText = "Password";
+            textBox2.Size = new Size(358, 45);
+            textBox2.TabIndex = 8;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
-            // pictureBox1
+            // textBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(137, 39);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(354, 281);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(19, 122);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Phone Number";
+            textBox1.Size = new Size(442, 45);
+            textBox1.TabIndex = 9;
             // 
-            // LoginForm
+            // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Goldenrod;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1445, 908);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(1448, 939);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(pictureBox1);
             Controls.Add(panel7);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "LoginForm";
+            Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
-            Load += LoginForm_Load;
+            Text = "Register";
+            panel7.ResumeLayout(false);
             loginPanel.ResumeLayout(false);
             loginPanel.PerformLayout();
-            panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -212,16 +216,17 @@
 
         #endregion
 
+        private Panel panel7;
         private Panel loginPanel;
-        private Button usernamebtn;
-        private TextBox passwordTb;
-        private TextBox usernameTb;
-        private Label ForgetAccLbl;
+        private Button ShowPasswordBtn;
+        private Button createNewAccBtn;
         private Panel panel2;
+        private TextBox usernameTb;
+        private TextBox passwordTb;
+        private PictureBox pictureBox1;
         private Label label2;
         private Label label3;
-        private Button ShowPasswordBtn;
-        private Panel panel7;
-        private PictureBox pictureBox1;
+        private TextBox textBox2;
+        private TextBox textBox1;
     }
 }
