@@ -16,10 +16,5 @@ namespace Fitness_Gym.Forms
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

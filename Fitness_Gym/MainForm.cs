@@ -13,7 +13,7 @@ namespace Fitness_Gym
 
     public partial class MainForm : Form
     {
-        private Form activeForm;
+        private Form? activeForm;
         public MainForm()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace Fitness_Gym
 
         private void sidebar_button_members_Click(object sender, EventArgs e)
         {
-                OpenChildForm(new Forms.Members());
+                OpenChildForm(new Forms.Member());
         }
 
         private void sidebar_button_refferal_Click(object sender, EventArgs e)
@@ -97,12 +97,38 @@ namespace Fitness_Gym
 
         private void sidebar_button_logout_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+        "Are you sure you want to logout?",
+        "Logout",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Close MainForm → returns to LoginForm
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
         }
 
         private void sidebar_button_plan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.Membership());
         }
+
+        private void ButtonHoverEnter(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = Color.FromArgb(255, 217, 64);
+            btn.ForeColor = Color.Black;
+        }
+
+        private void ButtonHoverLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = Color.Transparent;
+            btn.ForeColor = SystemColors.Control;
+        }
+
     }
 }

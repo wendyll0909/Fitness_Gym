@@ -28,22 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel4 = new Panel();
             label_totalmembers_title = new Label();
             label_totalmember_value = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
-            label_total_revenue_title = new Label();
+            label5 = new Label();
             label_total_revenue_value = new Label();
+            label_total_revenue_title = new Label();
             panel5 = new Panel();
             panel6 = new Panel();
             label3 = new Label();
             label_active_subcription_value = new Label();
             panel7 = new Panel();
             panel8 = new Panel();
-            label5 = new Label();
             label_topMemberPlan_value = new Label();
+            label2 = new Label();
+            panel9 = new Panel();
+            panel10 = new Panel();
+            dataGridView_recent_act = new DataGridView();
+            Action = new DataGridViewTextBoxColumn();
+            Details = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -52,6 +61,9 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_recent_act).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -60,7 +72,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(label_totalmember_value);
-            panel1.Location = new Point(47, 34);
+            panel1.Location = new Point(29, 59);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(10, 0, 0, 0);
             panel1.Size = new Size(170, 100);
@@ -102,7 +114,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label_total_revenue_value);
-            panel2.Location = new Point(312, 34);
+            panel2.Location = new Point(290, 59);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(10, 0, 0, 0);
             panel2.Size = new Size(170, 100);
@@ -111,22 +123,21 @@
             // panel3
             // 
             panel3.BackColor = Color.Gold;
-            panel3.Controls.Add(label_total_revenue_title);
+            panel3.Controls.Add(label5);
             panel3.Location = new Point(-1, 67);
             panel3.Name = "panel3";
             panel3.Size = new Size(170, 32);
             panel3.TabIndex = 4;
             // 
-            // label_total_revenue_title
+            // label5
             // 
-            label_total_revenue_title.AutoSize = true;
-            label_total_revenue_title.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_total_revenue_title.Location = new Point(29, 6);
-            label_total_revenue_title.Name = "label_total_revenue_title";
-            label_total_revenue_title.Size = new Size(105, 20);
-            label_total_revenue_title.TabIndex = 1;
-            label_total_revenue_title.Text = "Total Revenue";
-            label_total_revenue_title.Click += label1_Click;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(46, 6);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 20);
+            label5.TabIndex = 1;
+            label5.Text = "Avg. Rating";
             // 
             // label_total_revenue_value
             // 
@@ -138,13 +149,24 @@
             label_total_revenue_value.TabIndex = 0;
             label_total_revenue_value.Text = "0";
             // 
+            // label_total_revenue_title
+            // 
+            label_total_revenue_title.AutoSize = true;
+            label_total_revenue_title.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_total_revenue_title.Location = new Point(35, 6);
+            label_total_revenue_title.Name = "label_total_revenue_title";
+            label_total_revenue_title.Size = new Size(105, 20);
+            label_total_revenue_title.TabIndex = 1;
+            label_total_revenue_title.Text = "Total Revenue";
+            label_total_revenue_title.Click += label1_Click;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.White;
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(label_active_subcription_value);
-            panel5.Location = new Point(581, 34);
+            panel5.Location = new Point(563, 59);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(10, 0, 0, 0);
             panel5.Size = new Size(170, 100);
@@ -163,11 +185,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(14, 6);
+            label3.Location = new Point(31, 6);
             label3.Name = "label3";
-            label3.Size = new Size(134, 20);
+            label3.Size = new Size(119, 20);
             label3.TabIndex = 1;
-            label3.Text = "Active Subcription";
+            label3.Text = "Active Members";
             label3.Click += label3_Click;
             // 
             // label_active_subcription_value
@@ -186,7 +208,7 @@
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(panel8);
             panel7.Controls.Add(label_topMemberPlan_value);
-            panel7.Location = new Point(820, 34);
+            panel7.Location = new Point(802, 59);
             panel7.Name = "panel7";
             panel7.Padding = new Padding(10, 0, 0, 0);
             panel7.Size = new Size(170, 100);
@@ -195,21 +217,11 @@
             // panel8
             // 
             panel8.BackColor = Color.Gold;
-            panel8.Controls.Add(label5);
+            panel8.Controls.Add(label_total_revenue_title);
             panel8.Location = new Point(-1, 67);
             panel8.Name = "panel8";
             panel8.Size = new Size(170, 32);
             panel8.TabIndex = 4;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(8, 6);
-            label5.Name = "label5";
-            label5.Size = new Size(158, 20);
-            label5.TabIndex = 1;
-            label5.Text = "Top Membership Plan";
             // 
             // label_topMemberPlan_value
             // 
@@ -221,15 +233,84 @@
             label_topMemberPlan_value.TabIndex = 0;
             label_topMemberPlan_value.Text = "0";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18.75F, FontStyle.Bold);
+            label2.Location = new Point(19, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(141, 35);
+            label2.TabIndex = 12;
+            label2.Text = "Dashboard";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.White;
+            panel9.Controls.Add(label2);
+            panel9.Controls.Add(panel7);
+            panel9.Controls.Add(panel5);
+            panel9.Controls.Add(panel1);
+            panel9.Controls.Add(panel2);
+            panel9.Location = new Point(16, 12);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1024, 182);
+            panel9.TabIndex = 13;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.White;
+            panel10.Controls.Add(dataGridView_recent_act);
+            panel10.Controls.Add(label1);
+            panel10.Location = new Point(16, 223);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(1024, 250);
+            panel10.TabIndex = 14;
+            // 
+            // dataGridView_recent_act
+            // 
+            dataGridView_recent_act.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView_recent_act.BackgroundColor = SystemColors.ControlLight;
+            dataGridView_recent_act.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_recent_act.Columns.AddRange(new DataGridViewColumn[] { Action, Details, Date });
+            dataGridView_recent_act.Location = new Point(19, 70);
+            dataGridView_recent_act.Name = "dataGridView_recent_act";
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView_recent_act.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView_recent_act.Size = new Size(986, 153);
+            dataGridView_recent_act.TabIndex = 13;
+            // 
+            // Action
+            // 
+            Action.HeaderText = "Action";
+            Action.Name = "Action";
+            // 
+            // Details
+            // 
+            Details.HeaderText = "Details";
+            Details.Name = "Details";
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18.75F, FontStyle.Bold);
+            label1.Location = new Point(19, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(193, 35);
+            label1.TabIndex = 12;
+            label1.Text = "Recent Activity";
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1052, 632);
-            Controls.Add(panel7);
-            Controls.Add(panel5);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
@@ -249,6 +330,11 @@
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_recent_act).EndInit();
             ResumeLayout(false);
         }
 
@@ -270,5 +356,13 @@
         private Panel panel8;
         private Label label5;
         private Label label_topMemberPlan_value;
+        private Label label2;
+        private Panel panel9;
+        private Panel panel10;
+        private Label label1;
+        private DataGridView dataGridView_recent_act;
+        private DataGridViewTextBoxColumn Action;
+        private DataGridViewTextBoxColumn Details;
+        private DataGridViewTextBoxColumn Date;
     }
 }

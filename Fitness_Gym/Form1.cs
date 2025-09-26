@@ -33,7 +33,7 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=DESKTOP-IL390HQ\\SQLEXPRESS;Initial Catalog = PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection conn = new("Data Source=DESKTOP-L3OR9IK\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
@@ -49,12 +49,13 @@ namespace Fitness_Gym
                     {
                         MessageBox.Show($"{role} login successful!", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        usernameTb.Clear();
-                        passwordTb.Clear();
-                        // Navigate to Dashboard
-                        MainForm mainform = new MainForm();
-                        mainform.Show();
-                        this.Hide();
+
+                        this.Hide(); // avoid flicker
+                        using (MainForm mainform = new MainForm())
+                        {
+                            mainform.ShowDialog(); // block until MainForm is closed
+                        }
+                        this.Close(); // once MainForm is closed, LoginForm closes too → app exits
                     }
                     else
                     {
