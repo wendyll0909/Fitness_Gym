@@ -35,142 +35,81 @@ namespace Fitness_Gym.Forms
         }
         private void LoadMembers()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = @"SELECT MemberID, FirstName, LastName, Email, ContactNo, Gender, DateOfBirth, MembershipPlan, Status 
-                                 FROM Members";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView_members_lists.DataSource = dt;
-            }
+            // Optional: set defaults on load
+            comboBox_Gender.SelectedIndex = -1;
+            comboBox_plan.SelectedIndex = -1;
         }
 
         private void button_add_Member_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string fullName = textBox_FirstName.Text.Trim() + " " + textBox_LastName.Text.Trim();
+            string email = textBox_email.Text.Trim();
+            string dob = datepicker_Birthday.Value.ToShortDateString();
+            string plan = comboBox_plan.SelectedItem?.ToString() ?? "";
+            string status = "Active"; // you can set this manually or from another control
+
+            if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(email))
             {
-                conn.Open();
-
-                // ✅ Generate next MemberID
-                string getIdQuery = "SELECT ISNULL(MAX(MemberID), 0) + 1 FROM Members";
-                SqlCommand getIdCmd = new SqlCommand(getIdQuery, conn);
-                int newMemberId = (int)getIdCmd.ExecuteScalar();
-
-                string query = @"INSERT INTO Members 
-                                (MemberID, FirstName, LastName, Email, ContactNo, Gender, DateOfBirth, MembershipPlan, Status)
-                                VALUES (@MemberID, @FirstName, @LastName, @Email, @ContactNo, @Gender, @DateOfBirth, @MembershipPlan, 'Active')";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MemberID", newMemberId);
-                cmd.Parameters.AddWithValue("@FirstName", textBox_FirstName.Text);
-                cmd.Parameters.AddWithValue("@LastName", textBox_LastName.Text);
-                cmd.Parameters.AddWithValue("@Email", textBox_email.Text);
-                cmd.Parameters.AddWithValue("@ContactNo", textBox_Contact.Text);
-                cmd.Parameters.AddWithValue("@Gender", comboBox_Gender.Text);
-                cmd.Parameters.AddWithValue("@DateOfBirth", datepicker_Birthday.Value);
-                cmd.Parameters.AddWithValue("@MembershipPlan", comboBox_plan.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Member added successfully!");
-                LoadMembers();
-                ClearFields();
+                MessageBox.Show("Please fill out required fields (Name, Email).", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            // Add values directly into DataGridView
+            dataGridView_members_lists.Rows.Add(fullName, email, dob, plan, status);
+
+            ClearFields();
         }
 
         private void button_update_member_Click(object sender, EventArgs e)
         {
-            if (dataGridView_members_lists.CurrentRow != null)
+            if(dataGridView_members_lists.CurrentRow != null)
             {
-                int memberId = Convert.ToInt32(dataGridView_members_lists.CurrentRow.Cells["MemberID"].Value);
+                DataGridViewRow row = dataGridView_members_lists.CurrentRow;
 
-                MessageBox.Show("Selected MemberID: " + memberId); // ✅ Debugging
+                string fullName = textBox_FirstName.Text.Trim() + " " + textBox_LastName.Text.Trim();
+                row.Cells["nameColumn"].Value = fullName;
+                row.Cells["emailColumn"].Value = textBox_email.Text.Trim();
+                row.Cells["dobColumn"].Value = datepicker_Birthday.Value.ToShortDateString();
+                row.Cells["planColumn"].Value = comboBox_plan.SelectedItem?.ToString() ?? "";
+                row.Cells["statusColumn"].Value = "Active";
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = @"UPDATE Members 
-                                     SET FirstName=@FirstName, LastName=@LastName, Email=@Email, ContactNo=@ContactNo, 
-                                         Gender=@Gender, DateOfBirth=@DateOfBirth, MembershipPlan=@MembershipPlan 
-                                     WHERE MemberID=@MemberID";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@FirstName", textBox_FirstName.Text);
-                    cmd.Parameters.AddWithValue("@LastName", textBox_LastName.Text);
-                    cmd.Parameters.AddWithValue("@Email", textBox_email.Text);
-                    cmd.Parameters.AddWithValue("@ContactNo", textBox_Contact.Text);
-                    cmd.Parameters.AddWithValue("@Gender", comboBox_Gender.Text);
-                    cmd.Parameters.AddWithValue("@DateOfBirth", datepicker_Birthday.Value);
-                    cmd.Parameters.AddWithValue("@MembershipPlan", comboBox_plan.Text);
-                    cmd.Parameters.AddWithValue("@MemberID", memberId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    MessageBox.Show("Rows updated: " + rowsAffected);
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Member updated successfully!");
-                        LoadMembers();
-                        ClearFields();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Update failed. No rows affected.");
-                    }
-                }
+                ClearFields();
             }
             else
             {
-                MessageBox.Show("Please select a member to update.");
+                MessageBox.Show("Please select a member to update.", "Info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void button_delete_member_Click(object sender, EventArgs e)
         {
-            if (dataGridView_members_lists.CurrentRow != null)
+            if(dataGridView_members_lists.CurrentRow != null)
             {
-                int memberId = Convert.ToInt32(dataGridView_members_lists.CurrentRow.Cells["MemberID"].Value);
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "DELETE FROM Members WHERE MemberID=@MemberID";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MemberID", memberId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    MessageBox.Show("Rows deleted: " + rowsAffected);
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Member deleted successfully!");
-                        LoadMembers();
-                        ClearFields();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Delete failed. No rows affected.");
-                    }
-                }
+                dataGridView_members_lists.Rows.RemoveAt(dataGridView_members_lists.CurrentRow.Index);
             }
             else
             {
-                MessageBox.Show("Please select a member to delete.");
+                MessageBox.Show("Please select a member to delete.", "Info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void dataGridView_members_lists_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Populate fields when clicking a row
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView_members_lists.Rows[e.RowIndex];
 
-                textBox_FirstName.Text = row.Cells["FirstName"].Value.ToString();
-                textBox_LastName.Text = row.Cells["LastName"].Value.ToString();
-                textBox_email.Text = row.Cells["Email"].Value.ToString();
-                textBox_Contact.Text = row.Cells["ContactNo"].Value.ToString();
-                comboBox_Gender.Text = row.Cells["Gender"].Value.ToString();
-                datepicker_Birthday.Value = Convert.ToDateTime(row.Cells["DateOfBirth"].Value);
-                comboBox_plan.Text = row.Cells["MembershipPlan"].Value.ToString();
+                string[] nameParts = row.Cells["nameColumn"].Value?.ToString().Split(' ');
+                if (nameParts.Length > 0) textBox_FirstName.Text = nameParts[0];
+                if (nameParts.Length > 1) textBox_LastName.Text = nameParts[1];
+
+                textBox_email.Text = row.Cells["emailColumn"].Value?.ToString();
+                datepicker_Birthday.Value = Convert.ToDateTime(row.Cells["dobColumn"].Value);
+                comboBox_plan.Text = row.Cells["planColumn"].Value?.ToString();
             }
         }
 
@@ -182,7 +121,6 @@ namespace Fitness_Gym.Forms
             textBox_Contact.Clear();
             comboBox_Gender.SelectedIndex = -1;
             comboBox_plan.SelectedIndex = -1;
-            datepicker_Birthday.Value = DateTime.Now;
         }
     }
 }
