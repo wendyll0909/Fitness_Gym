@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel4 = new Panel();
             label_totalmembers_title = new Label();
@@ -49,9 +49,6 @@
             panel9 = new Panel();
             panel10 = new Panel();
             dataGridView_recent_act = new DataGridView();
-            Action = new DataGridViewTextBoxColumn();
-            Details = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
             label1 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
@@ -107,6 +104,7 @@
             label_totalmember_value.Size = new Size(17, 20);
             label_totalmember_value.TabIndex = 0;
             label_totalmember_value.Text = "0";
+            label_totalmember_value.Click += label_totalmember_value_Click;
             // 
             // panel2
             // 
@@ -148,6 +146,7 @@
             label_total_revenue_value.Size = new Size(17, 20);
             label_total_revenue_value.TabIndex = 0;
             label_total_revenue_value.Text = "0";
+            label_total_revenue_value.Click += label_total_revenue_value_Click;
             // 
             // label_total_revenue_title
             // 
@@ -201,6 +200,7 @@
             label_active_subcription_value.Size = new Size(17, 20);
             label_active_subcription_value.TabIndex = 0;
             label_active_subcription_value.Text = "0";
+            label_active_subcription_value.Click += label_active_subcription_value_Click;
             // 
             // panel7
             // 
@@ -232,6 +232,7 @@
             label_topMemberPlan_value.Size = new Size(17, 20);
             label_topMemberPlan_value.TabIndex = 0;
             label_topMemberPlan_value.Text = "0";
+            label_topMemberPlan_value.Click += label_topMemberPlan_value_Click;
             // 
             // label2
             // 
@@ -255,6 +256,7 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(1024, 182);
             panel9.TabIndex = 13;
+            panel9.Paint += panel9_Paint;
             // 
             // panel10
             // 
@@ -265,34 +267,20 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(1024, 250);
             panel10.TabIndex = 14;
+            panel10.Paint += panel10_Paint;
             // 
             // dataGridView_recent_act
             // 
             dataGridView_recent_act.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_recent_act.BackgroundColor = SystemColors.ControlLight;
             dataGridView_recent_act.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_recent_act.Columns.AddRange(new DataGridViewColumn[] { Action, Details, Date });
             dataGridView_recent_act.Location = new Point(19, 70);
             dataGridView_recent_act.Name = "dataGridView_recent_act";
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView_recent_act.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView_recent_act.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView_recent_act.Size = new Size(986, 153);
             dataGridView_recent_act.TabIndex = 13;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.Name = "Action";
-            // 
-            // Details
-            // 
-            Details.HeaderText = "Details";
-            Details.Name = "Details";
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Date";
-            Date.Name = "Date";
+            dataGridView_recent_act.CellContentClick += dataGridView_recent_act_CellContentClick;
             // 
             // label1
             // 
@@ -361,8 +349,5 @@
         private Panel panel10;
         private Label label1;
         private DataGridView dataGridView_recent_act;
-        private DataGridViewTextBoxColumn Action;
-        private DataGridViewTextBoxColumn Details;
-        private DataGridViewTextBoxColumn Date;
     }
 }
