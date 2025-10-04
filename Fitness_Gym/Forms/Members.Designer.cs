@@ -51,11 +51,6 @@
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             panel2 = new Panel();
             dataGridView_members_lists = new DataGridView();
-            nameColumn = new DataGridViewTextBoxColumn();
-            emailColumn = new DataGridViewTextBoxColumn();
-            dobColumn = new DataGridViewTextBoxColumn();
-            planColumn = new DataGridViewTextBoxColumn();
-            statusColumn = new DataGridViewTextBoxColumn();
             label9 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -167,7 +162,6 @@
             // comboBox_Gender
             // 
             comboBox_Gender.FormattingEnabled = true;
-            comboBox_Gender.Items.AddRange(new object[] { "Male", "Female" });
             comboBox_Gender.Location = new Point(34, 150);
             comboBox_Gender.Name = "comboBox_Gender";
             comboBox_Gender.Size = new Size(136, 23);
@@ -301,37 +295,11 @@
             // 
             dataGridView_members_lists.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_members_lists.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_members_lists.Columns.AddRange(new DataGridViewColumn[] { nameColumn, emailColumn, dobColumn, planColumn, statusColumn });
             dataGridView_members_lists.Location = new Point(20, 48);
             dataGridView_members_lists.Name = "dataGridView_members_lists";
             dataGridView_members_lists.Size = new Size(982, 270);
             dataGridView_members_lists.TabIndex = 50;
             dataGridView_members_lists.CellContentClick += dataGridView_members_lists_CellContentClick_1;
-            // 
-            // nameColumn
-            // 
-            nameColumn.HeaderText = "Name";
-            nameColumn.Name = "nameColumn";
-            // 
-            // emailColumn
-            // 
-            emailColumn.HeaderText = "Email";
-            emailColumn.Name = "emailColumn";
-            // 
-            // dobColumn
-            // 
-            dobColumn.HeaderText = "Date of Birth";
-            dobColumn.Name = "dobColumn";
-            // 
-            // planColumn
-            // 
-            planColumn.HeaderText = "Plan";
-            planColumn.Name = "planColumn";
-            // 
-            // statusColumn
-            // 
-            statusColumn.HeaderText = "Status";
-            statusColumn.Name = "statusColumn";
             // 
             // label9
             // 
@@ -388,10 +356,5 @@
         private Panel panel2;
         private DataGridView dataGridView_members_lists;
         private Label label9;
-        private DataGridViewTextBoxColumn nameColumn;
-        private DataGridViewTextBoxColumn emailColumn;
-        private DataGridViewTextBoxColumn dobColumn;
-        private DataGridViewTextBoxColumn planColumn;
-        private DataGridViewTextBoxColumn statusColumn;
     }
 }
