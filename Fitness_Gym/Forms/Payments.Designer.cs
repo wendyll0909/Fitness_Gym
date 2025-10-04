@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView_payments_list = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
             label1 = new Label();
             number_amount = new NumericUpDown();
             comboBox_member = new ComboBox();
@@ -45,8 +38,8 @@
             label3 = new Label();
             label5 = new Label();
             panel1 = new Panel();
-            panel2 = new Panel();
             button_add_payment = new Button();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView_payments_list).BeginInit();
             ((System.ComponentModel.ISupportInitialize)number_amount).BeginInit();
             panel1.SuspendLayout();
@@ -57,55 +50,13 @@
             // 
             dataGridView_payments_list.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_payments_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_payments_list.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column8 });
             dataGridView_payments_list.Location = new Point(15, 56);
             dataGridView_payments_list.Margin = new Padding(3, 2, 3, 2);
             dataGridView_payments_list.Name = "dataGridView_payments_list";
             dataGridView_payments_list.RowHeadersWidth = 51;
             dataGridView_payments_list.Size = new Size(996, 261);
             dataGridView_payments_list.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "MemberID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Plan";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Amount";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Payment Date";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Payment Method";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Created At";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Updated At";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
+            dataGridView_payments_list.CellContentClick += dataGridView_payments_list_CellContentClick;
             // 
             // label1
             // 
@@ -116,6 +67,7 @@
             label1.Size = new Size(259, 35);
             label1.TabIndex = 11;
             label1.Text = "Billing and Payments";
+            label1.Click += label1_Click;
             // 
             // number_amount
             // 
@@ -124,6 +76,7 @@
             number_amount.Name = "number_amount";
             number_amount.Size = new Size(131, 23);
             number_amount.TabIndex = 27;
+            number_amount.ValueChanged += number_amount_ValueChanged;
             // 
             // comboBox_member
             // 
@@ -133,6 +86,7 @@
             comboBox_member.Name = "comboBox_member";
             comboBox_member.Size = new Size(163, 23);
             comboBox_member.TabIndex = 26;
+            comboBox_member.SelectedIndexChanged += comboBox_member_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -143,6 +97,7 @@
             label4.Size = new Size(55, 16);
             label4.TabIndex = 25;
             label4.Text = "Amount:";
+            label4.Click += label4_Click;
             // 
             // label2
             // 
@@ -153,6 +108,7 @@
             label2.Size = new Size(60, 16);
             label2.TabIndex = 24;
             label2.Text = "Member:";
+            label2.Click += label2_Click;
             // 
             // comboBox_paymen_method
             // 
@@ -162,6 +118,7 @@
             comboBox_paymen_method.Name = "comboBox_paymen_method";
             comboBox_paymen_method.Size = new Size(133, 23);
             comboBox_paymen_method.TabIndex = 29;
+            comboBox_paymen_method.SelectedIndexChanged += comboBox_paymen_method_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -172,6 +129,7 @@
             label3.Size = new Size(111, 16);
             label3.TabIndex = 28;
             label3.Text = "Payment Method:";
+            label3.Click += label3_Click;
             // 
             // label5
             // 
@@ -182,6 +140,7 @@
             label5.Size = new Size(187, 30);
             label5.TabIndex = 30;
             label5.Text = "Payment History";
+            label5.Click += label5_Click;
             // 
             // panel1
             // 
@@ -198,16 +157,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1028, 241);
             panel1.TabIndex = 33;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(dataGridView_payments_list);
-            panel2.Controls.Add(label5);
-            panel2.Location = new Point(12, 283);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1028, 331);
-            panel2.TabIndex = 34;
+            panel1.Paint += panel1_Paint;
             // 
             // button_add_payment
             // 
@@ -220,6 +170,18 @@
             button_add_payment.TabIndex = 47;
             button_add_payment.Text = "Add Payment";
             button_add_payment.UseVisualStyleBackColor = false;
+            button_add_payment.Click += button_add_payment_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dataGridView_payments_list);
+            panel2.Controls.Add(label5);
+            panel2.Location = new Point(12, 283);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1028, 331);
+            panel2.TabIndex = 34;
+            panel2.Paint += panel2_Paint;
             // 
             // Payments
             // 
@@ -230,6 +192,7 @@
             Controls.Add(panel2);
             Name = "Payments";
             Text = "Payments";
+            Load += Payments_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_payments_list).EndInit();
             ((System.ComponentModel.ISupportInitialize)number_amount).EndInit();
             panel1.ResumeLayout(false);
@@ -247,13 +210,6 @@
         private ComboBox comboBox_member;
         private Label label4;
         private Label label2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column8;
         private ComboBox comboBox_paymen_method;
         private Label label3;
         private Label label5;

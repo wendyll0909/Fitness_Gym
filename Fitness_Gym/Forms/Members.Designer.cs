@@ -50,9 +50,8 @@
             label7 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             panel2 = new Panel();
-            label9 = new Label();
-          
             dataGridView_members_lists = new DataGridView();
+            label9 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_members_lists).BeginInit();
@@ -67,6 +66,7 @@
             label1.Size = new Size(74, 17);
             label1.TabIndex = 0;
             label1.Text = "First Name:";
+            label1.Click += label1_Click;
             // 
             // textBox_FirstName
             // 
@@ -75,6 +75,7 @@
             textBox_FirstName.Name = "textBox_FirstName";
             textBox_FirstName.Size = new Size(154, 25);
             textBox_FirstName.TabIndex = 1;
+            textBox_FirstName.TextChanged += textBox_FirstName_TextChanged;
             // 
             // textBox_LastName
             // 
@@ -83,6 +84,7 @@
             textBox_LastName.Name = "textBox_LastName";
             textBox_LastName.Size = new Size(159, 25);
             textBox_LastName.TabIndex = 3;
+            textBox_LastName.TextChanged += textBox_LastName_TextChanged;
             // 
             // label2
             // 
@@ -102,6 +104,7 @@
             textBox_email.Name = "textBox_email";
             textBox_email.Size = new Size(136, 25);
             textBox_email.TabIndex = 5;
+            textBox_email.TextChanged += textBox_email_TextChanged;
             // 
             // label3
             // 
@@ -112,6 +115,7 @@
             label3.Size = new Size(42, 17);
             label3.TabIndex = 4;
             label3.Text = "Email:";
+            label3.Click += label3_Click;
             // 
             // textBox_Contact
             // 
@@ -120,6 +124,7 @@
             textBox_Contact.Name = "textBox_Contact";
             textBox_Contact.Size = new Size(136, 25);
             textBox_Contact.TabIndex = 7;
+            textBox_Contact.TextChanged += textBox_Contact_TextChanged;
             // 
             // label4
             // 
@@ -130,6 +135,7 @@
             label4.Size = new Size(74, 17);
             label4.TabIndex = 6;
             label4.Text = "Contact no:";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -140,6 +146,7 @@
             label5.Size = new Size(54, 17);
             label5.TabIndex = 8;
             label5.Text = "Gender:";
+            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -150,16 +157,17 @@
             label6.Size = new Size(84, 17);
             label6.TabIndex = 10;
             label6.Text = "Date of Birth:";
+            label6.Click += label6_Click;
             // 
             // comboBox_Gender
             // 
             comboBox_Gender.FormattingEnabled = true;
-            comboBox_Gender.Items.AddRange(new object[] { "Male", "Female" });
             comboBox_Gender.Location = new Point(34, 150);
             comboBox_Gender.Name = "comboBox_Gender";
             comboBox_Gender.Size = new Size(136, 23);
             comboBox_Gender.TabIndex = 14;
             comboBox_Gender.Text = "Select Gender...";
+            comboBox_Gender.SelectedIndexChanged += comboBox_Gender_SelectedIndexChanged;
             // 
             // datepicker_Birthday
             // 
@@ -167,6 +175,7 @@
             datepicker_Birthday.Name = "datepicker_Birthday";
             datepicker_Birthday.Size = new Size(200, 23);
             datepicker_Birthday.TabIndex = 15;
+            datepicker_Birthday.ValueChanged += datepicker_Birthday_ValueChanged;
             // 
             // panel1
             // 
@@ -193,6 +202,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1028, 253);
             panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
             // 
             // button_delete_member
             // 
@@ -205,6 +215,7 @@
             button_delete_member.TabIndex = 48;
             button_delete_member.Text = "Delete";
             button_delete_member.UseVisualStyleBackColor = false;
+            button_delete_member.Click += button_delete_member_Click_1;
             // 
             // button_update_member
             // 
@@ -217,6 +228,7 @@
             button_update_member.TabIndex = 47;
             button_update_member.Text = "Update";
             button_update_member.UseVisualStyleBackColor = false;
+            button_update_member.Click += button_update_member_Click_1;
             // 
             // button_add_Member
             // 
@@ -229,6 +241,7 @@
             button_add_Member.TabIndex = 46;
             button_add_Member.Text = "Add";
             button_add_Member.UseVisualStyleBackColor = false;
+            button_add_Member.Click += button_add_Member_Click_1;
             // 
             // comboBox_plan
             // 
@@ -238,6 +251,7 @@
             comboBox_plan.Size = new Size(136, 23);
             comboBox_plan.TabIndex = 38;
             comboBox_plan.Text = "Select Plan..";
+            comboBox_plan.SelectedIndexChanged += comboBox_plan_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -248,6 +262,7 @@
             label8.Size = new Size(113, 17);
             label8.TabIndex = 37;
             label8.Text = "Membership Plan:";
+            label8.Click += label8_Click;
             // 
             // label7
             // 
@@ -258,6 +273,7 @@
             label7.Size = new Size(148, 21);
             label7.TabIndex = 36;
             label7.Text = "Add New Member";
+            label7.Click += label7_Click;
             // 
             // sqlCommand1
             // 
@@ -273,6 +289,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1026, 340);
             panel2.TabIndex = 17;
+            panel2.Paint += panel2_Paint;
+            // 
+            // dataGridView_members_lists
+            // 
+            dataGridView_members_lists.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView_members_lists.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_members_lists.Location = new Point(20, 48);
+            dataGridView_members_lists.Name = "dataGridView_members_lists";
+            dataGridView_members_lists.Size = new Size(982, 270);
+            dataGridView_members_lists.TabIndex = 50;
+            dataGridView_members_lists.CellContentClick += dataGridView_members_lists_CellContentClick_1;
             // 
             // label9
             // 
@@ -283,39 +310,7 @@
             label9.Size = new Size(118, 21);
             label9.TabIndex = 49;
             label9.Text = "Members Lists";
-            // 
-            dataGridView_members_lists.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView_members_lists.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
-            // Create the columns properly
-            DataGridViewTextBoxColumn nameColumn = new DataGridViewTextBoxColumn();
-            nameColumn.HeaderText = "Name";
-            nameColumn.Name = "Name";
-
-            DataGridViewTextBoxColumn emailColumn = new DataGridViewTextBoxColumn();
-            emailColumn.HeaderText = "Email";
-            emailColumn.Name = "Email";
-
-            DataGridViewTextBoxColumn dobColumn = new DataGridViewTextBoxColumn();
-            dobColumn.HeaderText = "Date of Birth";
-            dobColumn.Name = "Date_of_Birth";
-
-            DataGridViewTextBoxColumn planColumn = new DataGridViewTextBoxColumn();
-            planColumn.HeaderText = "Plan";
-            planColumn.Name = "Plan";
-
-            DataGridViewTextBoxColumn statusColumn = new DataGridViewTextBoxColumn();
-            statusColumn.HeaderText = "Status";
-            statusColumn.Name = "Status";
-
-            dataGridView_members_lists.Columns.AddRange(new DataGridViewColumn[] {
-        nameColumn, emailColumn, dobColumn, planColumn, statusColumn
-    });
-
-            dataGridView_members_lists.Location = new Point(20, 48);
-            dataGridView_members_lists.Name = "dataGridView_members_lists";
-            dataGridView_members_lists.Size = new Size(982, 270);
-            dataGridView_members_lists.TabIndex = 50;
+            label9.Click += label9_Click;
             // 
             // Member
             // 
@@ -326,6 +321,7 @@
             Controls.Add(panel1);
             Name = "Member";
             Text = "Members";
+            Load += Member_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
