@@ -7,7 +7,7 @@ namespace Fitness_Gym.Forms
 {
     public partial class Member : Form
     {
-        string connectionString = "Data Source=PC06\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Network Library=DBMSSOCN";
+        string connectionString = "Data Source=PC05\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Network Library=DBMSSOCN";
 
         public Member()
         {
@@ -402,7 +402,7 @@ namespace Fitness_Gym.Forms
         {
         }
 
-        
+
 
         private void button_add_Member_Click_1(object sender, EventArgs e)
         {
@@ -468,6 +468,11 @@ namespace Fitness_Gym.Forms
 
         private void label9_Click(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox_plan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

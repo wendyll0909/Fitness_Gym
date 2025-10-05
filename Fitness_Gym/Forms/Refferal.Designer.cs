@@ -37,14 +37,10 @@
             label2 = new Label();
             label3 = new Label();
             dataGridView_referrals = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            comboBox_referred = new ComboBox();
             button_add_referral = new Button();
             comboBox_referrer = new ComboBox();
-            comboBox_referred = new ComboBox();
             panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_referrals).BeginInit();
@@ -61,6 +57,7 @@
             label1.Size = new Size(216, 35);
             label1.TabIndex = 12;
             label1.Text = "Referral Program";
+            label1.Click += label1_Click;
             // 
             // label5
             // 
@@ -71,6 +68,7 @@
             label5.Size = new Size(105, 21);
             label5.TabIndex = 31;
             label5.Text = "Add Referral";
+            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -81,6 +79,7 @@
             label6.Size = new Size(59, 16);
             label6.TabIndex = 32;
             label6.Text = "Referrer:";
+            label6.Click += label6_Click;
             // 
             // label2
             // 
@@ -91,6 +90,7 @@
             label2.Size = new Size(116, 16);
             label2.TabIndex = 33;
             label2.Text = "Referred Member:";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -101,42 +101,19 @@
             label3.Size = new Size(77, 21);
             label3.TabIndex = 34;
             label3.Text = "Referrals";
+            label3.Click += label3_Click;
             // 
             // dataGridView_referrals
             // 
             dataGridView_referrals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_referrals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_referrals.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView_referrals.Location = new Point(12, 53);
             dataGridView_referrals.Margin = new Padding(3, 2, 3, 2);
             dataGridView_referrals.Name = "dataGridView_referrals";
             dataGridView_referrals.RowHeadersWidth = 51;
             dataGridView_referrals.Size = new Size(1000, 286);
             dataGridView_referrals.TabIndex = 35;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Referrer";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Referred";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Date";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Status";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
+            dataGridView_referrals.CellContentClick += dataGridView_referrals_CellContentClick;
             // 
             // panel1
             // 
@@ -152,6 +129,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1028, 230);
             panel1.TabIndex = 39;
+            panel1.Paint += panel1_Paint;
+            // 
+            // comboBox_referred
+            // 
+            comboBox_referred.FormattingEnabled = true;
+            comboBox_referred.Location = new Point(573, 104);
+            comboBox_referred.Margin = new Padding(3, 2, 3, 2);
+            comboBox_referred.Name = "comboBox_referred";
+            comboBox_referred.Size = new Size(178, 23);
+            comboBox_referred.TabIndex = 48;
+            comboBox_referred.SelectedIndexChanged += comboBox_referred_SelectedIndexChanged;
             // 
             // button_add_referral
             // 
@@ -164,6 +152,7 @@
             button_add_referral.TabIndex = 47;
             button_add_referral.Text = "Add Referral";
             button_add_referral.UseVisualStyleBackColor = false;
+            button_add_referral.Click += button_add_referral_Click;
             // 
             // comboBox_referrer
             // 
@@ -173,15 +162,7 @@
             comboBox_referrer.Name = "comboBox_referrer";
             comboBox_referrer.Size = new Size(178, 23);
             comboBox_referrer.TabIndex = 36;
-            // 
-            // comboBox_referred
-            // 
-            comboBox_referred.FormattingEnabled = true;
-            comboBox_referred.Location = new Point(573, 104);
-            comboBox_referred.Margin = new Padding(3, 2, 3, 2);
-            comboBox_referred.Name = "comboBox_referred";
-            comboBox_referred.Size = new Size(178, 23);
-            comboBox_referred.TabIndex = 48;
+            comboBox_referrer.SelectedIndexChanged += comboBox_referrer_SelectedIndexChanged;
             // 
             // panel2
             // 
@@ -192,6 +173,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1028, 355);
             panel2.TabIndex = 40;
+            panel2.Paint += panel2_Paint;
             // 
             // Refferal
             // 
@@ -203,6 +185,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Refferal";
             Text = "Refferal";
+            Load += Refferal_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_referrals).EndInit();
             panel1.ResumeLayout(false);
@@ -222,10 +205,6 @@
         private Label label2;
         private Label label3;
         private DataGridView dataGridView_referrals;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Panel panel1;
         private ComboBox comboBox_referred;
         private Button button_add_referral;
