@@ -50,6 +50,7 @@
             panel2 = new Panel();
             dataGridView_members_lists = new DataGridView();
             label9 = new Label();
+            comboBox_plan = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_members_lists).BeginInit();
@@ -178,6 +179,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(comboBox_plan);
             panel1.Controls.Add(button_delete_member);
             panel1.Controls.Add(button_update_member);
             panel1.Controls.Add(button_add_Member);
@@ -287,6 +289,15 @@
             label9.Text = "Members Lists";
             label9.Click += label9_Click;
             // 
+            // comboBox_plan
+            // 
+            comboBox_plan.FormattingEnabled = true;
+            comboBox_plan.Location = new Point(585, 159);
+            comboBox_plan.Name = "comboBox_plan";
+            comboBox_plan.Size = new Size(121, 23);
+            comboBox_plan.TabIndex = 49;
+            comboBox_plan.SelectedIndexChanged += comboBox_plan_SelectedIndexChanged;
+            // 
             // Member
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -329,5 +340,6 @@
         private Panel panel2;
         private DataGridView dataGridView_members_lists;
         private Label label9;
+        private ComboBox comboBox_plan;
     }
 }
