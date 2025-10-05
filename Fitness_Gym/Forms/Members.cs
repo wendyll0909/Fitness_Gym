@@ -402,9 +402,7 @@ namespace Fitness_Gym.Forms
         {
         }
 
-        private void comboBox_plan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        
 
         private void button_add_Member_Click_1(object sender, EventArgs e)
         {

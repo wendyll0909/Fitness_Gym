@@ -8,7 +8,7 @@ namespace Fitness_Gym.Forms
     public partial class Dashboard : Form
     {
         // Connection string from Login.cs
-        private readonly string connectionString = "Data Source=PC06\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private readonly string connectionString = "Data Source=PC15\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public Dashboard()
         {
