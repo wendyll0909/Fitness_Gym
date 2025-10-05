@@ -45,8 +45,6 @@
             button_delete_member = new Button();
             button_update_member = new Button();
             button_add_Member = new Button();
-            comboBox_plan = new ComboBox();
-            label8 = new Label();
             label7 = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             panel2 = new Panel();
@@ -183,8 +181,6 @@
             panel1.Controls.Add(button_delete_member);
             panel1.Controls.Add(button_update_member);
             panel1.Controls.Add(button_add_Member);
-            panel1.Controls.Add(comboBox_plan);
-            panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(datepicker_Birthday);
             panel1.Controls.Add(textBox_LastName);
@@ -242,27 +238,6 @@
             button_add_Member.Text = "Add";
             button_add_Member.UseVisualStyleBackColor = false;
             button_add_Member.Click += button_add_Member_Click_1;
-            // 
-            // comboBox_plan
-            // 
-            comboBox_plan.FormattingEnabled = true;
-            comboBox_plan.Location = new Point(514, 150);
-            comboBox_plan.Name = "comboBox_plan";
-            comboBox_plan.Size = new Size(136, 23);
-            comboBox_plan.TabIndex = 38;
-            comboBox_plan.Text = "Select Plan..";
-            comboBox_plan.SelectedIndexChanged += comboBox_plan_SelectedIndexChanged;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(514, 130);
-            label8.Name = "label8";
-            label8.Size = new Size(113, 17);
-            label8.TabIndex = 37;
-            label8.Text = "Membership Plan:";
-            label8.Click += label8_Click;
             // 
             // label7
             // 
@@ -348,8 +323,6 @@
         private Panel panel1;
         private Label label7;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
-        private ComboBox comboBox_plan;
-        private Label label8;
         private Button button_delete_member;
         private Button button_update_member;
         private Button button_add_Member;

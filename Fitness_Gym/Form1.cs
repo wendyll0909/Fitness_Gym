@@ -33,7 +33,7 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=PC06\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection conn = new("Data Source=PC15\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
