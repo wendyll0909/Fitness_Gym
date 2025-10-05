@@ -33,10 +33,6 @@
             label3 = new Label();
             label5 = new Label();
             dataGridView_feedback_list = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             comboBox_ratings = new ComboBox();
             comboBox_members = new ComboBox();
             label2 = new Label();
@@ -61,16 +57,18 @@
             label1.Size = new Size(289, 35);
             label1.TabIndex = 13;
             label1.Text = "Feedback Management";
+            label1.Click += label1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(4, 5);
+            label3.Location = new Point(3, 0);
             label3.Name = "label3";
             label3.Size = new Size(112, 21);
             label3.TabIndex = 36;
             label3.Text = "Feedback List";
+            label3.Click += label3_Click;
             // 
             // label5
             // 
@@ -81,12 +79,12 @@
             label5.Size = new Size(117, 21);
             label5.TabIndex = 35;
             label5.Text = "Add Feedback";
+            label5.Click += label5_Click;
             // 
             // dataGridView_feedback_list
             // 
             dataGridView_feedback_list.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_feedback_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_feedback_list.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView_feedback_list.Location = new Point(11, 38);
             dataGridView_feedback_list.Margin = new Padding(3, 2, 3, 2);
             dataGridView_feedback_list.Name = "dataGridView_feedback_list";
@@ -95,39 +93,15 @@
             dataGridView_feedback_list.TabIndex = 37;
             dataGridView_feedback_list.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "Member";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Feedback";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Rating";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Date";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
             // comboBox_ratings
             // 
             comboBox_ratings.FormattingEnabled = true;
-            comboBox_ratings.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
             comboBox_ratings.Location = new Point(525, 84);
             comboBox_ratings.Margin = new Padding(3, 2, 3, 2);
             comboBox_ratings.Name = "comboBox_ratings";
             comboBox_ratings.Size = new Size(184, 23);
             comboBox_ratings.TabIndex = 41;
+            comboBox_ratings.SelectedIndexChanged += comboBox_ratings_SelectedIndexChanged;
             // 
             // comboBox_members
             // 
@@ -137,6 +111,7 @@
             comboBox_members.Name = "comboBox_members";
             comboBox_members.Size = new Size(184, 23);
             comboBox_members.TabIndex = 40;
+            comboBox_members.SelectedIndexChanged += comboBox_members_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -147,6 +122,7 @@
             label2.Size = new Size(49, 16);
             label2.TabIndex = 39;
             label2.Text = "Rating:";
+            label2.Click += label2_Click;
             // 
             // label6
             // 
@@ -157,6 +133,7 @@
             label6.Size = new Size(60, 16);
             label6.TabIndex = 38;
             label6.Text = "Member:";
+            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -167,6 +144,7 @@
             label7.Size = new Size(72, 16);
             label7.TabIndex = 43;
             label7.Text = "Feedback:";
+            label7.Click += label7_Click;
             // 
             // textBox_feedback
             // 
@@ -176,6 +154,7 @@
             textBox_feedback.Name = "textBox_feedback";
             textBox_feedback.Size = new Size(637, 104);
             textBox_feedback.TabIndex = 44;
+            textBox_feedback.TextChanged += textBox_feedback_TextChanged;
             // 
             // button_add_feedback
             // 
@@ -188,6 +167,7 @@
             button_add_feedback.TabIndex = 45;
             button_add_feedback.Text = "Submit Feedback";
             button_add_feedback.UseVisualStyleBackColor = false;
+            button_add_feedback.Click += button_add_feedback_Click;
             // 
             // panel1
             // 
@@ -205,6 +185,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1028, 303);
             panel1.TabIndex = 46;
+            panel1.Paint += panel1_Paint;
             // 
             // contextMenuStrip1
             // 
@@ -220,6 +201,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1028, 295);
             panel2.TabIndex = 47;
+            panel2.Paint += panel2_Paint;
             // 
             // Feedback
             // 
@@ -246,10 +228,6 @@
         private Label label3;
         private Label label5;
         private DataGridView dataGridView_feedback_list;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private ComboBox comboBox_ratings;
         private ComboBox comboBox_members;
         private Label label2;
