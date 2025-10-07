@@ -98,16 +98,23 @@ namespace Fitness_Gym
         private void sidebar_button_logout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-        "Are you sure you want to logout?",
-        "Logout",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
+                "Are you sure you want to logout?",
+                "Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                this.Close(); // Close MainForm → returns to LoginForm
-                LoginForm login = new LoginForm();
-                login.Show();
+                // Find the existing LoginForm instance or create a new one
+                LoginForm loginForm = Application.OpenForms.OfType<LoginForm>().FirstOrDefault();
+
+                if (loginForm == null)
+                {
+                    loginForm = new LoginForm();
+                }
+
+                loginForm.Show(); // Show the login form
+                this.Hide(); // Hide the main form instead of closing it
             }
         }
 
