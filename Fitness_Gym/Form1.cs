@@ -33,7 +33,7 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=PC05\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection conn = new("Data Source=.\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
@@ -51,9 +51,15 @@ namespace Fitness_Gym
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Hide(); // Hide login form
+
                         MainForm mainform = new MainForm();
-                        mainform.Show(); // Use Show() instead of ShowDialog()
+
+                        // ✅ When MainForm closes, exit the entire application
+                        mainform.FormClosed += (s, args) => Application.Exit();
+
+                        mainform.Show();
                     }
+
                     else
                     {
                         MessageBox.Show("Invalid username or password.", "Login Failed",
@@ -85,7 +91,7 @@ namespace Fitness_Gym
             return builder.ToString();
         }
 
-    
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -111,7 +117,7 @@ namespace Fitness_Gym
 
         private void ShowPasswordBtn_Click(object sender, EventArgs e)
         {
-            passwordTb.PasswordChar = passwordTb.PasswordChar == '*' ? '\0' : '*';
+            passwordTb.PasswordChar = passwordTb.PasswordChar == ' ' ? '\0' : ' ';
             ShowPasswordBtn.Text = passwordTb.PasswordChar == '*' ? "👁️" : "🙈";
         }
 
@@ -125,7 +131,7 @@ namespace Fitness_Gym
             // Optional: Custom painting for loginPanel if needed
         }
 
-       
+
 
         private void createNewAccBtn_Click(object sender, EventArgs e)
         {

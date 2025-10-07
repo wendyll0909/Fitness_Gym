@@ -42,6 +42,7 @@
             comboBox_Gender = new ComboBox();
             datepicker_Birthday = new DateTimePicker();
             panel1 = new Panel();
+            comboBox_plan = new ComboBox();
             button_delete_member = new Button();
             button_update_member = new Button();
             button_add_Member = new Button();
@@ -50,7 +51,6 @@
             panel2 = new Panel();
             dataGridView_members_lists = new DataGridView();
             label9 = new Label();
-            comboBox_plan = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_members_lists).BeginInit();
@@ -202,6 +202,15 @@
             panel1.TabIndex = 16;
             panel1.Paint += panel1_Paint;
             // 
+            // comboBox_plan
+            // 
+            comboBox_plan.FormattingEnabled = true;
+            comboBox_plan.Location = new Point(585, 159);
+            comboBox_plan.Name = "comboBox_plan";
+            comboBox_plan.Size = new Size(121, 23);
+            comboBox_plan.TabIndex = 49;
+            comboBox_plan.SelectedIndexChanged += comboBox_plan_SelectedIndexChanged;
+            // 
             // button_delete_member
             // 
             button_delete_member.BackColor = Color.Salmon;
@@ -213,7 +222,7 @@
             button_delete_member.TabIndex = 48;
             button_delete_member.Text = "Delete";
             button_delete_member.UseVisualStyleBackColor = false;
-            button_delete_member.Click += button_delete_member_Click_1;
+            button_delete_member.Click += button_delete_member_Click;
             // 
             // button_update_member
             // 
@@ -226,7 +235,7 @@
             button_update_member.TabIndex = 47;
             button_update_member.Text = "Update";
             button_update_member.UseVisualStyleBackColor = false;
-            button_update_member.Click += button_update_member_Click_1;
+            button_update_member.Click += button_update_member_Click;
             // 
             // button_add_Member
             // 
@@ -239,7 +248,7 @@
             button_add_Member.TabIndex = 46;
             button_add_Member.Text = "Add";
             button_add_Member.UseVisualStyleBackColor = false;
-            button_add_Member.Click += button_add_Member_Click_1;
+            button_add_Member.Click += button_add_Member_Click;
             // 
             // label7
             // 
@@ -289,15 +298,6 @@
             label9.Text = "Members Lists";
             label9.Click += label9_Click;
             // 
-            // comboBox_plan
-            // 
-            comboBox_plan.FormattingEnabled = true;
-            comboBox_plan.Location = new Point(585, 159);
-            comboBox_plan.Name = "comboBox_plan";
-            comboBox_plan.Size = new Size(121, 23);
-            comboBox_plan.TabIndex = 49;
-            comboBox_plan.SelectedIndexChanged += comboBox_plan_SelectedIndexChanged;
-            // 
             // Member
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -307,7 +307,7 @@
             Controls.Add(panel1);
             Name = "Member";
             Text = "Members";
-            Load += Member_Load_1;
+            Load += Member_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

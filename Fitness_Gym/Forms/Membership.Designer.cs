@@ -40,12 +40,12 @@
             Column3 = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
+            textBox_plan_duration = new TextBox();
+            textBox_plan_price = new TextBox();
+            textBox_plan_name = new TextBox();
             button_delete_plan = new Button();
             button_update_plan = new Button();
             button_add_plan = new Button();
-            textBox_plan_name = new TextBox();
-            textBox_plan_price = new TextBox();
-            textBox_plan_duration = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView_plan_list).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -171,6 +171,27 @@
             panel2.TabIndex = 59;
             panel2.Paint += panel2_Paint;
             // 
+            // textBox_plan_duration
+            // 
+            textBox_plan_duration.Location = new Point(236, 123);
+            textBox_plan_duration.Name = "textBox_plan_duration";
+            textBox_plan_duration.Size = new Size(146, 23);
+            textBox_plan_duration.TabIndex = 65;
+            // 
+            // textBox_plan_price
+            // 
+            textBox_plan_price.Location = new Point(471, 78);
+            textBox_plan_price.Name = "textBox_plan_price";
+            textBox_plan_price.Size = new Size(146, 23);
+            textBox_plan_price.TabIndex = 64;
+            // 
+            // textBox_plan_name
+            // 
+            textBox_plan_name.Location = new Point(236, 83);
+            textBox_plan_name.Name = "textBox_plan_name";
+            textBox_plan_name.Size = new Size(146, 23);
+            textBox_plan_name.TabIndex = 63;
+            // 
             // button_delete_plan
             // 
             button_delete_plan.BackColor = Color.Salmon;
@@ -182,6 +203,7 @@
             button_delete_plan.TabIndex = 62;
             button_delete_plan.Text = "Delete Plan";
             button_delete_plan.UseVisualStyleBackColor = false;
+            button_delete_plan.Click += button_delete_plan_Click;
             // 
             // button_update_plan
             // 
@@ -194,6 +216,7 @@
             button_update_plan.TabIndex = 61;
             button_update_plan.Text = "Update Plan";
             button_update_plan.UseVisualStyleBackColor = false;
+            button_update_plan.Click += button_update_plan_Click;
             // 
             // button_add_plan
             // 
@@ -206,27 +229,7 @@
             button_add_plan.TabIndex = 60;
             button_add_plan.Text = "Add Plan";
             button_add_plan.UseVisualStyleBackColor = false;
-            // 
-            // textBox_plan_name
-            // 
-            textBox_plan_name.Location = new Point(236, 83);
-            textBox_plan_name.Name = "textBox_plan_name";
-            textBox_plan_name.Size = new Size(146, 23);
-            textBox_plan_name.TabIndex = 63;
-            // 
-            // textBox_plan_price
-            // 
-            textBox_plan_price.Location = new Point(471, 78);
-            textBox_plan_price.Name = "textBox_plan_price";
-            textBox_plan_price.Size = new Size(146, 23);
-            textBox_plan_price.TabIndex = 64;
-            // 
-            // textBox_plan_duration
-            // 
-            textBox_plan_duration.Location = new Point(236, 123);
-            textBox_plan_duration.Name = "textBox_plan_duration";
-            textBox_plan_duration.Size = new Size(146, 23);
-            textBox_plan_duration.TabIndex = 65;
+            button_add_plan.Click += button_add_plan_Click;
             // 
             // Membership
             // 

@@ -7,7 +7,7 @@ namespace Fitness_Gym.Forms
 {
     public partial class Member : Form
     {
-        string connectionString = "Data Source=PC05\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;Network Library=DBMSSOCN";
+        string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False;";
 
         public Member()
         {
@@ -429,10 +429,6 @@ namespace Fitness_Gym.Forms
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void Member_Load_1(object sender, EventArgs e)
         {
         }
 
