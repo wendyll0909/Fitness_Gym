@@ -35,11 +35,12 @@
             label1 = new Label();
             label3 = new Label();
             panel1 = new Panel();
-            button_generate = new Button();
-            date_from = new DateTimePicker();
-            date_to = new DateTimePicker();
-            label4 = new Label();
             label7 = new Label();
+            label4 = new Label();
+            date_to = new DateTimePicker();
+            date_from = new DateTimePicker();
+            button_generate = new Button();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             comboBox_Report_type.Name = "comboBox_Report_type";
             comboBox_Report_type.Size = new Size(133, 23);
             comboBox_Report_type.TabIndex = 50;
+            comboBox_Report_type.SelectedIndexChanged += comboBox_Report_type_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -72,6 +74,7 @@
             label6.Size = new Size(89, 16);
             label6.TabIndex = 48;
             label6.Text = "Report Type: ";
+            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -93,6 +96,7 @@
             label1.Size = new Size(107, 35);
             label1.TabIndex = 46;
             label1.Text = "Reports";
+            label1.Click += label1_Click;
             // 
             // label3
             // 
@@ -103,6 +107,7 @@
             label3.Size = new Size(267, 21);
             label3.TabIndex = 52;
             label3.Text = "Sample Report: Feedback Ratings ";
+            label3.Click += label3_Click;
             // 
             // panel1
             // 
@@ -117,10 +122,49 @@
             panel1.Controls.Add(comboBox_Report_type);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label6);
-            panel1.Location = new Point(10, 12);
+            panel1.Location = new Point(18, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1022, 224);
             panel1.TabIndex = 54;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 9.75F);
+            label7.Location = new Point(653, 84);
+            label7.Name = "label7";
+            label7.Size = new Size(27, 16);
+            label7.TabIndex = 56;
+            label7.Text = "To:";
+            label7.Click += label7_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 9.75F);
+            label4.Location = new Point(407, 79);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 16);
+            label4.TabIndex = 55;
+            label4.Text = "From:";
+            label4.Click += label4_Click;
+            // 
+            // date_to
+            // 
+            date_to.Location = new Point(653, 103);
+            date_to.Name = "date_to";
+            date_to.Size = new Size(200, 23);
+            date_to.TabIndex = 54;
+            date_to.ValueChanged += date_to_ValueChanged;
+            // 
+            // date_from
+            // 
+            date_from.Location = new Point(407, 103);
+            date_from.Name = "date_from";
+            date_from.Size = new Size(200, 23);
+            date_from.TabIndex = 53;
+            date_from.ValueChanged += date_from_ValueChanged;
             // 
             // button_generate
             // 
@@ -133,51 +177,28 @@
             button_generate.TabIndex = 52;
             button_generate.Text = "Generate Report";
             button_generate.UseVisualStyleBackColor = false;
+            button_generate.Click += button_generate_Click;
             // 
-            // date_from
+            // panel2
             // 
-            date_from.Location = new Point(407, 103);
-            date_from.Name = "date_from";
-            date_from.Size = new Size(200, 23);
-            date_from.TabIndex = 53;
-            // 
-            // date_to
-            // 
-            date_to.Location = new Point(653, 103);
-            date_to.Name = "date_to";
-            date_to.Size = new Size(200, 23);
-            date_to.TabIndex = 54;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 9.75F);
-            label4.Location = new Point(407, 79);
-            label4.Name = "label4";
-            label4.Size = new Size(41, 16);
-            label4.TabIndex = 55;
-            label4.Text = "From:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 9.75F);
-            label7.Location = new Point(653, 84);
-            label7.Name = "label7";
-            label7.Size = new Size(27, 16);
-            label7.TabIndex = 56;
-            label7.Text = "To:";
+            panel2.Location = new Point(12, 285);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1028, 317);
+            panel2.TabIndex = 55;
+            panel2.Paint += panel2_Paint;
             // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1052, 632);
+            Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Reports";
             Text = "Reports";
+            Load += Reports_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -197,5 +218,6 @@
         private DateTimePicker date_to;
         private DateTimePicker date_from;
         private Label label7;
+        private Panel panel2;
     }
 }
