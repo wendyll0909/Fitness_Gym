@@ -12,14 +12,13 @@ namespace Fitness_Gym.Forms
 {
     public partial class Members : Form
     {
-<<<<<<< Updated upstream
-        public Members()
-=======
+        public Members() {
+
         //sql
         string connectionString = "Data Source=DESKTOP-IL390HQ\\SQLEXPRESS04;Initial Catalog=PalenersGym;Integrated Security=True;Trust Server Certificate=True;";
 
         public Member()
->>>>>>> Stashed changes
+
         {
             InitializeComponent();
         }
@@ -189,7 +188,10 @@ namespace Fitness_Gym.Forms
             comboBox_Gender.SelectedIndex = -1;
             comboBox_plan.SelectedIndex = -1;
             datepicker_Birthday.Value = DateTime.Now;
+        
         }
->>>>>>> Stashed changes
     }
+
 }
+}
+

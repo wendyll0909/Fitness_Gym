@@ -54,9 +54,12 @@
             button_delete_plan = new Button();
             button_update_plan = new Button();
             button_add_plan = new Button();
+<<<<<<< Updated upstream
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+=======
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)dataGridView_plan_list).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -79,9 +82,15 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 9.75F);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label7.Location = new Point(50, 182);
             label7.Name = "label7";
             label7.Size = new Size(78, 20);
+=======
+            label7.Location = new Point(147, 167);
+            label7.Name = "label7";
+            label7.Size = new Size(130, 20);
+>>>>>>> Stashed changes
 =======
             label7.Location = new Point(147, 167);
             label7.Name = "label7";
@@ -112,7 +121,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label2.Location = new Point(456, 130);
+=======
+            label2.Location = new Point(485, 113);
+>>>>>>> Stashed changes
 =======
             label2.Location = new Point(485, 113);
 >>>>>>> Stashed changes
@@ -126,7 +139,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 9.75F);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label6.Location = new Point(81, 130);
+=======
+            label6.Location = new Point(147, 113);
+>>>>>>> Stashed changes
 =======
             label6.Location = new Point(147, 113);
 >>>>>>> Stashed changes
@@ -140,9 +157,15 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label3.Location = new Point(19, 381);
             label3.Name = "label3";
             label3.Size = new Size(177, 28);
+=======
+            label3.Location = new Point(21, 21);
+            label3.Name = "label3";
+            label3.Size = new Size(186, 28);
+>>>>>>> Stashed changes
 =======
             label3.Location = new Point(21, 21);
             label3.Name = "label3";
@@ -156,7 +179,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label5.Location = new Point(50, 70);
+=======
+            label5.Location = new Point(21, 52);
+>>>>>>> Stashed changes
 =======
             label5.Location = new Point(21, 52);
 >>>>>>> Stashed changes
@@ -170,7 +197,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18.75F, FontStyle.Bold);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label1.Location = new Point(19, 15);
+=======
+            label1.Location = new Point(3, 3);
+>>>>>>> Stashed changes
 =======
             label1.Location = new Point(3, 3);
 >>>>>>> Stashed changes
@@ -299,6 +330,7 @@
             button_add_plan.Text = "Add Plan";
             button_add_plan.UseVisualStyleBackColor = false;
             button_add_plan.Click += button_add_plan_Click;
+<<<<<<< Updated upstream
             // 
 >>>>>>> Stashed changes
             // Column1
@@ -333,12 +365,15 @@
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             // 
             // Membership
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1202, 843);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             Controls.Add(dataGridView1);
             Controls.Add(comboBox3);
@@ -351,6 +386,10 @@
             Controls.Add(label3);
             Controls.Add(label5);
             Controls.Add(label1);
+=======
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+>>>>>>> Stashed changes
 =======
             Controls.Add(panel1);
             Controls.Add(panel2);

@@ -12,6 +12,12 @@ namespace Fitness_Gym.Forms
 {
     public partial class Dashboard : Form
     {
+<<<<<<< Updated upstream
+=======
+        // Connection string from Login.cs
+        private readonly string connectionString = "Data Source=DESKTOP-IL390HQ\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+>>>>>>> Stashed changes
         public Dashboard()
         {
             InitializeComponent();

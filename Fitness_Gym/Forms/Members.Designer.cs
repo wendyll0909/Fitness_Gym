@@ -71,7 +71,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label1.Location = new Point(75, 61);
+=======
+            label1.Location = new Point(35, 77);
+>>>>>>> Stashed changes
 =======
             label1.Location = new Point(35, 77);
 >>>>>>> Stashed changes
@@ -84,10 +88,17 @@
             // 
             textBox_FirstName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             textBox_FirstName.Location = new Point(159, 57);
             textBox_FirstName.Margin = new Padding(3, 4, 3, 4);
             textBox_FirstName.Name = "textBox_FirstName";
             textBox_FirstName.Size = new Size(155, 29);
+=======
+            textBox_FirstName.Location = new Point(35, 104);
+            textBox_FirstName.Margin = new Padding(3, 4, 3, 4);
+            textBox_FirstName.Name = "textBox_FirstName";
+            textBox_FirstName.Size = new Size(175, 29);
+>>>>>>> Stashed changes
 =======
             textBox_FirstName.Location = new Point(35, 104);
             textBox_FirstName.Margin = new Padding(3, 4, 3, 4);
@@ -100,10 +111,17 @@
             // 
             textBox_LastName.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             textBox_LastName.Location = new Point(443, 57);
             textBox_LastName.Margin = new Padding(3, 4, 3, 4);
             textBox_LastName.Name = "textBox_LastName";
             textBox_LastName.Size = new Size(155, 29);
+=======
+            textBox_LastName.Location = new Point(298, 104);
+            textBox_LastName.Margin = new Padding(3, 4, 3, 4);
+            textBox_LastName.Name = "textBox_LastName";
+            textBox_LastName.Size = new Size(181, 29);
+>>>>>>> Stashed changes
 =======
             textBox_LastName.Location = new Point(298, 104);
             textBox_LastName.Margin = new Padding(3, 4, 3, 4);
@@ -117,7 +135,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label2.Location = new Point(355, 61);
+=======
+            label2.Location = new Point(298, 77);
+>>>>>>> Stashed changes
 =======
             label2.Location = new Point(298, 77);
 >>>>>>> Stashed changes
@@ -131,7 +153,11 @@
             // 
             textBox_email.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             textBox_email.Location = new Point(704, 57);
+=======
+            textBox_email.Location = new Point(563, 104);
+>>>>>>> Stashed changes
 =======
             textBox_email.Location = new Point(563, 104);
 >>>>>>> Stashed changes
@@ -145,7 +171,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label3.Location = new Point(616, 61);
+=======
+            label3.Location = new Point(563, 77);
+>>>>>>> Stashed changes
 =======
             label3.Location = new Point(563, 77);
 >>>>>>> Stashed changes
@@ -158,7 +188,11 @@
             // 
             textBox_Contact.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             textBox_Contact.Location = new Point(976, 57);
+=======
+            textBox_Contact.Location = new Point(801, 104);
+>>>>>>> Stashed changes
 =======
             textBox_Contact.Location = new Point(801, 104);
 >>>>>>> Stashed changes
@@ -172,7 +206,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label4.Location = new Point(888, 61);
+=======
+            label4.Location = new Point(801, 77);
+>>>>>>> Stashed changes
 =======
             label4.Location = new Point(801, 77);
 >>>>>>> Stashed changes
@@ -186,7 +224,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label5.Location = new Point(75, 149);
+=======
+            label5.Location = new Point(39, 173);
+>>>>>>> Stashed changes
 =======
             label5.Location = new Point(39, 173);
 >>>>>>> Stashed changes
@@ -200,7 +242,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             label6.Location = new Point(343, 149);
+=======
+            label6.Location = new Point(298, 173);
+>>>>>>> Stashed changes
 =======
             label6.Location = new Point(298, 173);
 >>>>>>> Stashed changes
@@ -212,9 +258,13 @@
             // comboBox_Gender
             // 
             comboBox_Gender.FormattingEnabled = true;
+<<<<<<< Updated upstream
             comboBox_Gender.Items.AddRange(new object[] { "Male", "Female" });
 <<<<<<< Updated upstream
             comboBox_Gender.Location = new Point(159, 145);
+=======
+            comboBox_Gender.Location = new Point(39, 200);
+>>>>>>> Stashed changes
 =======
             comboBox_Gender.Location = new Point(39, 200);
 >>>>>>> Stashed changes
@@ -227,12 +277,15 @@
             // dateTimePicker1
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             dateTimePicker1.Location = new Point(460, 145);
             dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(228, 27);
             dateTimePicker1.TabIndex = 15;
 =======
+=======
+>>>>>>> Stashed changes
             datepicker_Birthday.Location = new Point(298, 200);
             datepicker_Birthday.Margin = new Padding(3, 4, 3, 4);
             datepicker_Birthday.Name = "datepicker_Birthday";
@@ -296,6 +349,10 @@
             button_delete_member.TabIndex = 48;
             button_delete_member.Text = "Delete";
             button_delete_member.UseVisualStyleBackColor = false;
+<<<<<<< Updated upstream
+=======
+            button_delete_member.Click += button_delete_member_Click;
+>>>>>>> Stashed changes
             // 
             // button_update_member
             // 
@@ -307,9 +364,14 @@
             button_update_member.TabIndex = 47;
             button_update_member.Text = "Update";
             button_update_member.UseVisualStyleBackColor = false;
+<<<<<<< Updated upstream
+=======
+            button_update_member.Click += button_update_member_Click;
+>>>>>>> Stashed changes
             // 
             // Button_add_Member
             // 
+<<<<<<< Updated upstream
             Button_add_Member.BackColor = Color.LimeGreen;
             Button_add_Member.ForeColor = SystemColors.ButtonHighlight;
             Button_add_Member.Location = new Point(35, 252);
@@ -318,11 +380,25 @@
             Button_add_Member.TabIndex = 46;
             Button_add_Member.Text = "Add";
             Button_add_Member.UseVisualStyleBackColor = false;
+=======
+            button_add_Member.BackColor = Color.LimeGreen;
+            button_add_Member.ForeColor = SystemColors.ButtonHighlight;
+            button_add_Member.Location = new Point(35, 252);
+            button_add_Member.Name = "button_add_Member";
+            button_add_Member.Size = new Size(155, 56);
+            button_add_Member.TabIndex = 46;
+            button_add_Member.Text = "Add";
+            button_add_Member.UseVisualStyleBackColor = false;
+            button_add_Member.Click += button_add_Member_Click;
+>>>>>>> Stashed changes
             // 
             // comboBox_plan
             // 
             comboBox_plan.FormattingEnabled = true;
+<<<<<<< Updated upstream
             comboBox_plan.Items.AddRange(new object[] { "Daily Pass", "Monthly Basic", "Quarterly Basic", "Annual Basic" });
+=======
+>>>>>>> Stashed changes
             comboBox_plan.Location = new Point(587, 200);
             comboBox_plan.Margin = new Padding(3, 4, 3, 4);
             comboBox_plan.Name = "comboBox_plan";
@@ -370,7 +446,10 @@
             // 
             dataGridView_members_lists.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_members_lists.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< Updated upstream
             dataGridView_members_lists.Columns.AddRange(new DataGridViewColumn[] { nameColumn, emailColumn, dobColumn, planColumn, statusColumn });
+=======
+>>>>>>> Stashed changes
             dataGridView_members_lists.Location = new Point(23, 64);
             dataGridView_members_lists.Margin = new Padding(3, 4, 3, 4);
             dataGridView_members_lists.Name = "dataGridView_members_lists";
@@ -429,6 +508,15 @@
             Name = "Member";
 >>>>>>> Stashed changes
             Text = "Members";
+<<<<<<< Updated upstream
+=======
+            Load += Member_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_members_lists).EndInit();
+>>>>>>> Stashed changes
             ResumeLayout(false);
             PerformLayout();
         }

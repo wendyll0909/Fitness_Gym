@@ -41,9 +41,17 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+<<<<<<< Updated upstream
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             button1 = new Button();
+=======
+            panel1 = new Panel();
+            comboBox_referred = new ComboBox();
+            button_add_referral = new Button();
+            comboBox_referrer = new ComboBox();
+            panel2 = new Panel();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -52,7 +60,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18.75F, FontStyle.Bold);
+<<<<<<< Updated upstream
             label1.Location = new Point(53, 56);
+=======
+            label1.Location = new Point(14, 19);
+>>>>>>> Stashed changes
             label1.Name = "label1";
             label1.Size = new Size(279, 45);
             label1.TabIndex = 12;
@@ -62,7 +74,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+<<<<<<< Updated upstream
             label5.Location = new Point(53, 141);
+=======
+            label5.Location = new Point(39, 80);
+>>>>>>> Stashed changes
             label5.Name = "label5";
             label5.Size = new Size(132, 28);
             label5.TabIndex = 31;
@@ -72,7 +88,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 9.75F);
+<<<<<<< Updated upstream
             label6.Location = new Point(53, 222);
+=======
+            label6.Location = new Point(99, 139);
+>>>>>>> Stashed changes
             label6.Name = "label6";
             label6.Size = new Size(76, 20);
             label6.TabIndex = 32;
@@ -82,7 +102,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F);
+<<<<<<< Updated upstream
             label2.Location = new Point(555, 222);
+=======
+            label2.Location = new Point(515, 143);
+>>>>>>> Stashed changes
             label2.Name = "label2";
             label2.Size = new Size(145, 20);
             label2.TabIndex = 33;
@@ -92,7 +116,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+<<<<<<< Updated upstream
             label3.Location = new Point(24, 478);
+=======
+            label3.Location = new Point(14, 20);
+>>>>>>> Stashed changes
             label3.Name = "label3";
             label3.Size = new Size(97, 28);
             label3.TabIndex = 34;
@@ -100,6 +128,7 @@
             // 
             // dataGridView1
             // 
+<<<<<<< Updated upstream
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(1, 519);
@@ -107,6 +136,16 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1201, 324);
             dataGridView1.TabIndex = 35;
+=======
+            dataGridView_referrals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView_referrals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_referrals.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridView_referrals.Location = new Point(14, 71);
+            dataGridView_referrals.Name = "dataGridView_referrals";
+            dataGridView_referrals.RowHeadersWidth = 51;
+            dataGridView_referrals.Size = new Size(1143, 381);
+            dataGridView_referrals.TabIndex = 35;
+>>>>>>> Stashed changes
             // 
             // Column1
             // 
@@ -138,6 +177,7 @@
             // 
             // comboBox1
             // 
+<<<<<<< Updated upstream
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(150, 214);
             comboBox1.Name = "comboBox1";
@@ -151,9 +191,45 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 37;
+=======
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(comboBox_referred);
+            panel1.Controls.Add(button_add_referral);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(comboBox_referrer);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(14, 16);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1175, 307);
+            panel1.TabIndex = 39;
+            // 
+            // comboBox_referred
+            // 
+            comboBox_referred.FormattingEnabled = true;
+            comboBox_referred.Location = new Point(655, 139);
+            comboBox_referred.Name = "comboBox_referred";
+            comboBox_referred.Size = new Size(203, 28);
+            comboBox_referred.TabIndex = 48;
+            // 
+            // button_add_referral
+            // 
+            button_add_referral.BackColor = Color.LimeGreen;
+            button_add_referral.ForeColor = SystemColors.ButtonHighlight;
+            button_add_referral.Location = new Point(99, 201);
+            button_add_referral.Name = "button_add_referral";
+            button_add_referral.Size = new Size(155, 56);
+            button_add_referral.TabIndex = 47;
+            button_add_referral.Text = "Add Referral";
+            button_add_referral.UseVisualStyleBackColor = false;
+            button_add_referral.Click += button_add_referral_Click;
+>>>>>>> Stashed changes
             // 
             // button1
             // 
+<<<<<<< Updated upstream
             button1.BackColor = Color.LimeGreen;
             button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(49, 293);
@@ -162,12 +238,31 @@
             button1.TabIndex = 38;
             button1.Text = "Add Referral";
             button1.UseVisualStyleBackColor = false;
+=======
+            comboBox_referrer.FormattingEnabled = true;
+            comboBox_referrer.Location = new Point(208, 133);
+            comboBox_referrer.Name = "comboBox_referrer";
+            comboBox_referrer.Size = new Size(203, 28);
+            comboBox_referrer.TabIndex = 36;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dataGridView_referrals);
+            panel2.Controls.Add(label3);
+            panel2.Location = new Point(14, 353);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1175, 473);
+            panel2.TabIndex = 40;
+>>>>>>> Stashed changes
             // 
             // Refferal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1202, 843);
+<<<<<<< Updated upstream
             Controls.Add(button1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
@@ -177,6 +272,10 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label1);
+=======
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+>>>>>>> Stashed changes
             Name = "Refferal";
             Text = "Refferal";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();

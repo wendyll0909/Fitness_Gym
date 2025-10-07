@@ -34,10 +34,14 @@ namespace Fitness_Gym
             try
             {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 using SqlConnection conn = new("Data Source=DESKTOP-IL390HQ\\SQLEXPRESS;Initial Catalog = PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
 =======
                 //sql
                 using SqlConnection conn = new("Data Source=DESKTOP-IL390HQ\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+>>>>>>> Stashed changes
+=======
+                using SqlConnection conn = new("Data Source=DESKTOP-IL390HQ\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;Application Intent=ReadWrite;MultiSubnetFailover=False");
 >>>>>>> Stashed changes
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
@@ -54,12 +58,18 @@ namespace Fitness_Gym
                     {
                         MessageBox.Show($"{role} login successful!", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+<<<<<<< Updated upstream
                         usernameTb.Clear();
                         passwordTb.Clear();
                         // Navigate to Dashboard
                         MainForm mainform = new MainForm();
                         mainform.Show();
                         this.Hide();
+=======
+
+                        this.DialogResult = DialogResult.OK; // signal success
+                        this.Close(); // close login form cleanly
+>>>>>>> Stashed changes
                     }
                     else
                     {
