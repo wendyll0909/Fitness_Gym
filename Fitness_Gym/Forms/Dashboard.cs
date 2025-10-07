@@ -8,7 +8,7 @@ namespace Fitness_Gym.Forms
     public partial class Dashboard : Form
     {
         // Connection string from Login.cs
-        private readonly string connectionString = "Data Source=PC32\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private readonly string connectionString = "Data Source=PC05\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public Dashboard()
         {
@@ -166,26 +166,63 @@ namespace Fitness_Gym.Forms
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+
+                    // Combined query to get recent activities from Payments, Referrals, and Feedback
                     string query = @"
-                        SELECT TOP 10 
-                            m.FirstName + ' ' + m.LastName AS MemberName,
-                            a.CheckInTime,
-                            a.Status
-                        FROM Attendance a
-                        JOIN Members m ON a.MemberID = m.MemberID
-                        ORDER BY a.CheckInTime DESC";
+                -- Recent Payments
+                SELECT TOP 5
+                    m.FirstName + ' ' + m.LastName AS Member,
+                    'Payment' AS ActivityType,
+                    'Paid ' + mp.PlanName + ' membership' AS Details,
+                    p.PaymentDate AS ActivityDate
+                FROM Payments p
+                JOIN Members m ON p.MemberID = m.MemberID
+                JOIN MembershipPlans mp ON p.PlanID = mp.PlanID
+                
+                UNION ALL
+                
+                -- Recent Referrals
+                SELECT TOP 5
+                    referrer.FirstName + ' ' + referrer.LastName AS Member,
+                    'Referral' AS ActivityType,
+                    'Referred ' + referred.FirstName + ' ' + referred.LastName AS Details,
+                    r.ReferralDate AS ActivityDate
+                FROM Referrals r
+                JOIN Members referrer ON r.ReferrerID = referrer.MemberID
+                JOIN Members referred ON r.ReferredMemberID = referred.MemberID
+                
+                UNION ALL
+                
+                -- Recent Feedback
+                SELECT TOP 5
+                    m.FirstName + ' ' + m.LastName AS Member,
+                    'Feedback' AS ActivityType,
+                    'Rated ' + CAST(f.Rating AS NVARCHAR(10)) + ' stars' AS Details,
+                    f.FeedbackDate AS ActivityDate
+                FROM Feedback f
+                JOIN Members m ON f.MemberID = m.MemberID
+                
+                ORDER BY ActivityDate DESC";
+
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
                         dataGridView_recent_act.DataSource = dataTable;
 
-                        // Optional: Customize column headers
+                        // Customize column headers to match your image
                         if (dataGridView_recent_act.Columns.Count > 0)
                         {
-                            dataGridView_recent_act.Columns["MemberName"].HeaderText = "Member Name";
-                            dataGridView_recent_act.Columns["CheckInTime"].HeaderText = "Check-In Time";
-                            dataGridView_recent_act.Columns["Status"].HeaderText = "Status";
+                            dataGridView_recent_act.Columns["Member"].HeaderText = "Member";
+                            dataGridView_recent_act.Columns["ActivityType"].HeaderText = "Activity Type";
+                            dataGridView_recent_act.Columns["Details"].HeaderText = "Details";
+                            dataGridView_recent_act.Columns["ActivityDate"].HeaderText = "Date";
+                        }
+
+                        // Optional: Format the date column
+                        if (dataGridView_recent_act.Columns.Contains("ActivityDate"))
+                        {
+                            dataGridView_recent_act.Columns["ActivityDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
                         }
                     }
                 }

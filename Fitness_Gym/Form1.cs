@@ -33,12 +33,12 @@ namespace Fitness_Gym
 
             try
             {
-                using SqlConnection conn = new("Data Source=PC32\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection conn = new("Data Source=PC05\\SQLEXPRESS;Initial Catalog=PalenersGym;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
                 conn.Open();
                 string query = "SELECT user_role FROM Account WHERE user_name=@username AND user_password=@password";
                 using SqlCommand cmd = new(query, conn);
                 cmd.Parameters.AddWithValue("@username", usernameTb.Text);
-                cmd.Parameters.AddWithValue("@password", HashPassword(passwordTb.Text)); // Hash the input password
+                cmd.Parameters.AddWithValue("@password", HashPassword(passwordTb.Text));
 
                 using SqlDataReader reader = cmd.ExecuteReader();
 
@@ -50,12 +50,9 @@ namespace Fitness_Gym
                         MessageBox.Show($"{role} login successful!", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Hide(); // avoid flicker
-                        using (MainForm mainform = new MainForm())
-                        {
-                            mainform.ShowDialog(); // block until MainForm is closed
-                        }
-                        this.Close(); // once MainForm is closed, LoginForm closes too → app exits
+                        this.Hide(); // Hide login form
+                        MainForm mainform = new MainForm();
+                        mainform.Show(); // Use Show() instead of ShowDialog()
                     }
                     else
                     {
@@ -128,11 +125,7 @@ namespace Fitness_Gym
             // Optional: Custom painting for loginPanel if needed
         }
 
-        private void ForgetAccLbl_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Please contact support at support@fitnessgym.com to reset your account.",
-                "Forgot Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+       
 
         private void createNewAccBtn_Click(object sender, EventArgs e)
         {
